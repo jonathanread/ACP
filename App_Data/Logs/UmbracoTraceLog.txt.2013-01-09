@@ -1,0 +1,488 @@
+2013-01-09 15:38:21,869 [72] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application starting
+2013-01-09 15:38:21,923 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Determining hash of code files on disk
+2013-01-09 15:38:21,939 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Hash determined (took 15ms)
+2013-01-09 15:38:22,163 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 212ms)
+2013-01-09 15:38:22,171 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 3ms)
+2013-01-09 15:38:22,174 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 1ms)
+2013-01-09 15:38:22,176 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IPackageAction, found 12 (took 1ms)
+2013-01-09 15:38:22,177 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 1ms)
+2013-01-09 15:38:22,179 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2013-01-09 15:38:22,184 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
+2013-01-09 15:38:22,338 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-01-09 15:38:22,340 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2013-01-09 15:38:22,424 [72] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 2ms)
+2013-01-09 15:38:22,559 [72] ERROR Umbraco.Core.PluginManager - [Thread 23] Error creating type umbraco.presentation.umbraco.Search.ExamineEvents
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> System.Configuration.ConfigurationErrorsException: Object reference not set to an instance of an object. (C:\inetpub\wwwroot\Umbraco_ACP\config\ExamineSettings.config line 12) ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at UmbracoExamine.DataServices.UmbracoContentService.GetAllUserPropertyNames()
+   at UmbracoExamine.Config.IndexSetExtensions.ToIndexCriteria(IndexSet set, IDataService svc)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.BaseUmbracoIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.UmbracoContentIndexer.Initialize(String name, NameValueCollection config)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   --- End of inner exception stack trace ---
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProviders(ProviderSettingsCollection configProviders, ProviderCollection providers, Type providerType)
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at UmbracoExamine.UmbracoEventManager..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-01-09 15:38:22,561 [72] ERROR Umbraco.Core.PluginManager - [Thread 23] Error creating type UmbracoExamine.UmbracoEventManager
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> System.Configuration.ConfigurationErrorsException: Object reference not set to an instance of an object. (C:\inetpub\wwwroot\Umbraco_ACP\config\ExamineSettings.config line 12) ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at UmbracoExamine.DataServices.UmbracoContentService.GetAllUserPropertyNames()
+   at UmbracoExamine.Config.IndexSetExtensions.ToIndexCriteria(IndexSet set, IDataService svc)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.BaseUmbracoIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.UmbracoContentIndexer.Initialize(String name, NameValueCollection config)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   --- End of inner exception stack trace ---
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProviders(ProviderSettingsCollection configProviders, ProviderCollection providers, Type providerType)
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at UmbracoExamine.UmbracoEventManager..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-01-09 15:38:22,565 [72] INFO  Umbraco.Core.ApplicationContext - [Thread 23] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:38:22,568 [72] INFO  Umbraco.Core.ApplicationContext - [Thread 23] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:38:22,616 [72] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application startup complete (took 738ms)
+2013-01-09 15:38:22,922 [72] INFO  Umbraco.Core.ApplicationContext - [Thread 19] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:38:22,923 [72] WARN  Umbraco.Web.UmbracoModule - [Thread 19] Umbraco is not configured
+2013-01-09 15:41:41,393 [72] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 60] Error executing query delete from umbracoLog where datestamp < @oldestPermittedLogEntry and logHeader in ('open','system')
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoLog'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:489d209f-4006-4385-a7d3-2716e1c412fe
+2013-01-09 15:41:41,511 [72] INFO  Umbraco.Web.UmbracoApplication - [Thread 60] Application shutdown. Reason: ConfigurationChange
+2013-01-09 15:41:41,558 [45] INFO  Umbraco.Core.CoreBootManager - [Thread 68] Umbraco application starting
+2013-01-09 15:41:41,589 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Determining hash of code files on disk
+2013-01-09 15:41:41,598 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Hash determined (took 7ms)
+2013-01-09 15:41:41,641 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 32ms)
+2013-01-09 15:41:41,649 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 3ms)
+2013-01-09 15:41:41,651 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 1ms)
+2013-01-09 15:41:41,652 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of umbraco.interfaces.IPackageAction, found 12 (took 1ms)
+2013-01-09 15:41:41,654 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 2ms)
+2013-01-09 15:41:41,655 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2013-01-09 15:41:41,659 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 0ms)
+2013-01-09 15:41:41,735 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 31] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoLog'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:2569f2d0-2c27-459c-a9c1-38b2fd2dfbdd
+2013-01-09 15:41:41,735 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 68] Error executing query SELECT id, createDate, trashed, parentId, nodeObjectType, nodeUser, level, path, sortOrder, uniqueID, text,
+                masterContentType,Alias,icon,thumbnail,description,
+                templateNodeId, IsDefault
+            FROM umbracoNode 
+            INNER JOIN cmsContentType ON umbracoNode.id = cmsContentType.nodeId
+            LEFT OUTER JOIN cmsDocumentType ON cmsContentType.nodeId = cmsDocumentType.contentTypeNodeId
+            WHERE nodeObjectType = @nodeObjectType
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoNode'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:41,747 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 29] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoLog'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:8c47d1d1-d66c-41ce-ab50-fc872572e580
+2013-01-09 15:41:41,785 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 61] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoLog'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:41,785 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 68] Error executing query select umbracoNode.id, umbracoNode.parentId, umbracoNode.sortOrder, cmsContentXml.xml from umbracoNode 
+inner join cmsContentXml on cmsContentXml.nodeId = umbracoNode.id and umbracoNode.nodeObjectType = @type
+inner join cmsDocument on cmsDocument.nodeId = umbracoNode.id
+where cmsDocument.published = 1 
+order by umbracoNode.level, umbracoNode.sortOrder
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoNode'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:2569f2d0-2c27-459c-a9c1-38b2fd2dfbdd
+2013-01-09 15:41:41,788 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 27] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoLog'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:41,793 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2013-01-09 15:41:41,794 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2013-01-09 15:41:41,801 [45] INFO  Umbraco.Core.PluginManager - [Thread 68] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 1ms)
+2013-01-09 15:41:41,861 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 68] Error executing query select distinct alias from cmsPropertyType order by alias
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'cmsPropertyType'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:41,868 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 68] Error executing query select distinct alias from cmsPropertyType order by alias
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'cmsPropertyType'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:41,883 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 68] Error executing query select distinct alias from cmsPropertyType order by alias
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'cmsPropertyType'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:42,150 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 68] Error executing query select 
+	            umbracoNode.id, umbracoNode.uniqueId, umbracoNode.level, 
+	            umbracoNode.parentId, umbracoNode.path, umbracoNode.sortOrder, umbracoNode.createDate, 
+	            umbracoNode.nodeUser, umbracoNode.text, 
+	            cmsMember.Email, cmsMember.LoginName, cmsMember.Password
+            from umbracoNode 
+            inner join cmsContent on cmsContent.nodeId = umbracoNode.id
+            inner join cmsMember on  cmsMember.nodeId = cmsContent.nodeId
+			where umbracoNode.nodeObjectType = @nodeObjectType AND 1=1			
+			order by umbracoNode.text
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoNode'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:42,150 [45] ERROR Umbraco.Core.PluginManager - [Thread 68] Error creating type umbraco.presentation.umbraco.Search.ExamineEvents
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> System.Data.SqlClient.SqlException: Invalid object name 'umbracoNode'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.member.Member.GetAllAsList()
+   at UmbracoExamine.UmbracoMemberIndexer.GetXDocument(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.AddNodesToIndex(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexAll(String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexRebuild()
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at UmbracoExamine.UmbracoEventManager..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-01-09 15:41:42,152 [45] ERROR Umbraco.Core.PluginManager - [Thread 68] Error creating type UmbracoExamine.UmbracoEventManager
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> System.Data.SqlClient.SqlException: Invalid object name 'umbracoNode'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.member.Member.GetAllAsList()
+   at UmbracoExamine.UmbracoMemberIndexer.GetXDocument(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.AddNodesToIndex(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexAll(String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexRebuild()
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at UmbracoExamine.UmbracoEventManager..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-01-09 15:41:42,158 [45] INFO  Umbraco.Core.ApplicationContext - [Thread 68] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:41:42,162 [45] INFO  Umbraco.Core.ApplicationContext - [Thread 68] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:41:42,185 [45] INFO  Umbraco.Core.CoreBootManager - [Thread 68] Umbraco application startup complete (took 618ms)
+2013-01-09 15:41:42,807 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 19] Error executing query SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS LEFT OUTER JOIN umbracoApp ON appAlias = appAlias WHERE CONSTRAINT_NAME = 'FK_umbracoUser2app_umbracoApp'
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoApp'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:42,858 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 19] Error executing query SELECT id FROM umbracoNode WHERE id = -21
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoNode'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:42,885 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 19] Error executing query SELECT action FROM umbracoAppTree
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'umbracoAppTree'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:41:42,886 [45] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 19] Error executing query SELECT description FROM cmsContentType
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'cmsContentType'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+ClientConnectionId:82bd53a8-3116-4221-ab40-8310b14096a8
+2013-01-09 15:42:34,697 [45] INFO  Umbraco.Web.UmbracoApplication - [Thread 28] Application shutdown. Reason: ConfigurationChange
+2013-01-09 15:42:34,797 [9] INFO  Umbraco.Core.CoreBootManager - [Thread 46] Umbraco application starting
+2013-01-09 15:42:34,828 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Determining hash of code files on disk
+2013-01-09 15:42:34,837 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Hash determined (took 7ms)
+2013-01-09 15:42:34,860 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 13ms)
+2013-01-09 15:42:34,868 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 3ms)
+2013-01-09 15:42:34,870 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 2ms)
+2013-01-09 15:42:34,871 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IPackageAction, found 12 (took 1ms)
+2013-01-09 15:42:34,874 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 2ms)
+2013-01-09 15:42:34,874 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2013-01-09 15:42:34,878 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 0ms)
+2013-01-09 15:42:34,954 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2013-01-09 15:42:34,955 [9] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2013-01-09 15:42:35,307 [9] INFO  Umbraco.Core.ApplicationContext - [Thread 46] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:42:35,309 [9] INFO  Umbraco.Core.ApplicationContext - [Thread 46] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:42:35,329 [9] INFO  Umbraco.Core.CoreBootManager - [Thread 46] Umbraco application startup complete (took 522ms)
+2013-01-09 15:43:08,092 [9] INFO  Umbraco.Core.ApplicationContext - [Thread 28] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:09,749 [9] INFO  Umbraco.Core.ApplicationContext - [Thread 52] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:10,047 [9] INFO  Umbraco.Web.UmbracoApplication - [Thread 53] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-01-09 15:43:11,728 [30] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application starting
+2013-01-09 15:43:11,775 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Determining hash of code files on disk
+2013-01-09 15:43:11,787 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Hash determined (took 10ms)
+2013-01-09 15:43:11,910 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 110ms)
+2013-01-09 15:43:11,919 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 3ms)
+2013-01-09 15:43:11,921 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 2ms)
+2013-01-09 15:43:11,923 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IPackageAction, found 14 (took 1ms)
+2013-01-09 15:43:11,927 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 3ms)
+2013-01-09 15:43:11,930 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-01-09 15:43:11,938 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 3ms)
+2013-01-09 15:43:12,043 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 6ms)
+2013-01-09 15:43:12,047 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-01-09 15:43:12,060 [30] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 2ms)
+2013-01-09 15:43:12,211 [30] INFO  Umbraco.Core.ApplicationContext - [Thread 23] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:12,214 [30] INFO  Umbraco.Core.ApplicationContext - [Thread 23] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:12,230 [30] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application startup complete (took 488ms)
+2013-01-09 15:43:12,422 [30] INFO  Umbraco.Core.ApplicationContext - [Thread 17] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:12,680 [30] INFO  Umbraco.Web.UmbracoApplication - [Thread 50] Application shutdown. Reason: ConfigurationChange
+2013-01-09 15:43:12,725 [8] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application starting
+2013-01-09 15:43:12,756 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Determining hash of code files on disk
+2013-01-09 15:43:12,765 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Hash determined (took 8ms)
+2013-01-09 15:43:12,786 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 11ms)
+2013-01-09 15:43:12,796 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 5ms)
+2013-01-09 15:43:12,800 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 3ms)
+2013-01-09 15:43:12,802 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IPackageAction, found 14 (took 1ms)
+2013-01-09 15:43:12,804 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 2ms)
+2013-01-09 15:43:12,806 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2013-01-09 15:43:12,809 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 0ms)
+2013-01-09 15:43:12,885 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2013-01-09 15:43:12,886 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2013-01-09 15:43:12,893 [8] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 2ms)
+2013-01-09 15:43:13,029 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 23] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:13,031 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 23] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:13,049 [8] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application startup complete (took 315ms)
+2013-01-09 15:43:13,215 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 54] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:13,246 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 57] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:13,463 [8] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 71ms)
+2013-01-09 15:43:14,809 [8] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 2ms)
+2013-01-09 15:43:16,171 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 57] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:16,171 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 57] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:16,182 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 34] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:56,746 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 17] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:56,746 [8] INFO  Umbraco.Core.ApplicationContext - [Thread 17] CurrentVersion different from configStatus: '4.11.1',''
+2013-01-09 15:43:57,109 [76] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application starting
+2013-01-09 15:43:57,141 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Determining hash of code files on disk
+2013-01-09 15:43:57,150 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Hash determined (took 7ms)
+2013-01-09 15:43:57,172 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 12ms)
+2013-01-09 15:43:57,183 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 5ms)
+2013-01-09 15:43:57,187 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 4ms)
+2013-01-09 15:43:57,189 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IPackageAction, found 14 (took 1ms)
+2013-01-09 15:43:57,191 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 1ms)
+2013-01-09 15:43:57,192 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+2013-01-09 15:43:57,196 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 0ms)
+2013-01-09 15:43:57,278 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 0ms)
+2013-01-09 15:43:57,278 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2013-01-09 15:43:57,286 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 2ms)
+2013-01-09 15:43:57,556 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 126ms)
+2013-01-09 15:43:57,579 [76] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 3ms)
+2013-01-09 15:43:57,623 [76] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application startup complete (took 505ms)
+2013-01-09 15:43:58,433 [76] INFO  Umbraco.Web.UmbracoApplication - [Thread 48] Application shutdown. Reason: ConfigurationChange
+2013-01-09 15:43:58,593 [77] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application starting
+2013-01-09 15:43:58,627 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Determining hash of code files on disk
+2013-01-09 15:43:58,636 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Hash determined (took 7ms)
+2013-01-09 15:43:58,784 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 133ms)
+2013-01-09 15:43:58,791 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 3ms)
+2013-01-09 15:43:58,793 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 1ms)
+2013-01-09 15:43:58,795 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IPackageAction, found 14 (took 1ms)
+2013-01-09 15:43:58,797 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 2ms)
+2013-01-09 15:43:58,800 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2013-01-09 15:43:58,806 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 2ms)
+2013-01-09 15:43:58,884 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-01-09 15:43:58,886 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2013-01-09 15:43:58,894 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 2ms)
+2013-01-09 15:43:59,025 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 6ms)
+2013-01-09 15:43:59,048 [77] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 3ms)
+2013-01-09 15:43:59,095 [77] INFO  Umbraco.Core.CoreBootManager - [Thread 23] Umbraco application startup complete (took 493ms)
+2013-01-09 15:51:55,351 [77] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 2ms)
+2013-01-09 15:51:55,354 [77] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 0ms)
+2013-01-09 15:51:55,516 [77] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 1ms)
+2013-01-09 15:52:26,587 [77] INFO  Umbraco.Core.PluginManager - [Thread 80] Completed resolution of types of umbraco.XsltExtensionAttribute, found 0 (took 9ms)

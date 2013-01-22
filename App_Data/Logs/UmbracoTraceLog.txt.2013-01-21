@@ -1,0 +1,92 @@
+2013-01-21 16:08:32,921 [19] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-01-21 16:08:33,084 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-01-21 16:08:33,092 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 7ms)
+2013-01-21 16:08:33,544 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 441ms)
+2013-01-21 16:08:33,552 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 2ms)
+2013-01-21 16:08:33,554 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 1ms)
+2013-01-21 16:08:33,556 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IPackageAction, found 14 (took 1ms)
+2013-01-21 16:08:33,558 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 1ms)
+2013-01-21 16:08:33,560 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2013-01-21 16:08:33,565 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
+2013-01-21 16:08:34,081 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-01-21 16:08:34,084 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2013-01-21 16:08:34,190 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 2ms)
+2013-01-21 16:08:34,389 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-01-21 16:08:34,481 [19] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 3ms)
+2013-01-21 16:08:34,644 [19] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1713ms)
+2013-01-21 16:08:38,564 [19] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.XsltExtensionAttribute, found 0 (took 8ms)
+2013-01-21 16:09:05,722 [19] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 2ms)
+2013-01-21 16:09:05,725 [19] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 0ms)
+2013-01-21 16:09:05,802 [19] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 1ms)
+2013-01-21 16:09:26,365 [19] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 10ms)
+2013-01-21 16:11:55,493 [19] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 0ms)
+2013-01-21 16:11:55,495 [19] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 0ms)
+2013-01-21 16:12:25,096 [19] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 0ms)
+2013-01-21 16:12:38,579 [19] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 0ms)
+2013-01-21 16:12:38,581 [19] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 0ms)
+2013-01-21 16:12:38,622 [19] INFO  Umbraco.Web.UmbracoApplication - [Thread 30] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-01-21 16:12:39,656 [47] INFO  Umbraco.Core.CoreBootManager - [Thread 55] Umbraco application starting
+2013-01-21 16:12:39,685 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Determining hash of code files on disk
+2013-01-21 16:12:39,693 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Hash determined (took 7ms)
+2013-01-21 16:12:39,779 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 76ms)
+2013-01-21 16:12:39,787 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 2ms)
+2013-01-21 16:12:39,789 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 1ms)
+2013-01-21 16:12:39,790 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.IPackageAction, found 12 (took 1ms)
+2013-01-21 16:12:39,792 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 1ms)
+2013-01-21 16:12:39,794 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2013-01-21 16:12:39,799 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
+2013-01-21 16:12:39,871 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-01-21 16:12:39,873 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2013-01-21 16:12:39,881 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 2ms)
+2013-01-21 16:12:40,000 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 6ms)
+2013-01-21 16:12:40,020 [47] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 2ms)
+2013-01-21 16:12:40,059 [47] INFO  Umbraco.Core.CoreBootManager - [Thread 55] Umbraco application startup complete (took 394ms)
+2013-01-21 16:12:40,186 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 1ms)
+2013-01-21 16:12:40,235 [47] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 1ms)
+2013-01-21 16:12:56,023 [47] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 0ms)
+2013-01-21 16:21:31,819 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 69] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:21:31,820 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 69] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:21:31,834 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 69] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:22:07,682 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 22] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:22:07,682 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 22] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:22:07,682 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 22] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:22:22,420 [47] INFO  Umbraco.Core.PluginManager - [Thread 65] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 1 (took 2ms)
+2013-01-21 16:22:27,203 [47] ERROR Umbraco.Web.UmbracoApplication - [Thread 60] An unhandled exception occurred
+System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.Web.HttpException (0x80004005): Cannot find ContentPlaceHolder 'ContentPlaceHolderDefault' in the master page '/masterpages/Master.master', verify content control's ContentPlaceHolderID attribute in the content page.
+   at System.Web.UI.MasterPage.CreateMaster(TemplateControl owner, HttpContext context, VirtualPath masterPageFile, IDictionary contentTemplateCollection)
+   at System.Web.UI.MasterPage.ApplyMasterRecursive(MasterPage master, IList appliedMasterFilePaths)
+   at System.Web.UI.Page.PerformPreInit()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-01-21 16:27:59,856 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 61] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:27:59,856 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 61] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:27:59,856 [47] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 61] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-01-21 16:37:36,848 [47] INFO  Umbraco.Core.PluginManager - [Thread 60] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 13ms)
+2013-01-21 16:41:57,981 [47] INFO  Umbraco.Web.UmbracoApplication - [Thread 15] Application shutdown. Reason: MaxRecompilationsReached
+2013-01-21 16:42:03,914 [43] INFO  Umbraco.Core.CoreBootManager - [Thread 46] Umbraco application starting
+2013-01-21 16:42:03,938 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Determining hash of code files on disk
+2013-01-21 16:42:03,950 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Hash determined (took 11ms)
+2013-01-21 16:42:04,054 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 92ms)
+2013-01-21 16:42:04,061 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 2ms)
+2013-01-21 16:42:04,064 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 2ms)
+2013-01-21 16:42:04,066 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IPackageAction, found 12 (took 1ms)
+2013-01-21 16:42:04,069 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 1ms)
+2013-01-21 16:42:04,071 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2013-01-21 16:42:04,076 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 2ms)
+2013-01-21 16:42:04,144 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-01-21 16:42:04,147 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-01-21 16:42:04,180 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 2ms)
+2013-01-21 16:42:04,279 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 6ms)
+2013-01-21 16:42:04,298 [43] INFO  Umbraco.Core.PluginManager - [Thread 46] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-01-21 16:42:04,422 [43] INFO  Umbraco.Core.CoreBootManager - [Thread 46] Umbraco application startup complete (took 502ms)
+2013-01-21 16:43:12,173 [43] INFO  Umbraco.Core.PluginManager - [Thread 65] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 2ms)
+2013-01-21 16:43:17,152 [43] INFO  Umbraco.Core.PluginManager - [Thread 75] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 3ms)
+2013-01-21 16:43:17,535 [43] INFO  Umbraco.Core.PluginManager - [Thread 41] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 10ms)
+2013-01-21 16:43:19,317 [43] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 0ms)
+2013-01-21 16:46:04,358 [43] INFO  Umbraco.Core.PluginManager - [Thread 89] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 1 (took 2ms)

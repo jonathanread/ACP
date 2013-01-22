@@ -1,0 +1,17 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+                            @{ 
+	                            var level = String.IsNullOrEmpty(Parameter.Level) ? 1 : int.Parse(Parameter.Level); 
+	                            var parent = @Model.AncestorOrSelf(1);
+	                            if (parent != null) {
+		                            <ul class="menu">
+                                        <li><a href="/">Home</a></li>
+		                            @foreach (var item in parent.Children.Where("Visible")) {
+			                            var selected = Array.IndexOf(Model.Path.Split(','), item.Id.ToString()) >= 0 ? " class=\"selected\"" : "";
+			                            var url = item.Url.Replace(".aspx","");
+                                        <li@Html.Raw(selected)>
+				                            <a href='@url'>@item.Name</a>
+			                            </li>
+			                            }
+		                            </ul>
+	                            }
+                            }
