@@ -7,5 +7,7 @@ $(document).ready(function(){
         .mouseout(function () {
             $(this).children(".subMenu").hide();
         });
-    $(".wrapper .rotator").cycle({ cleartype: true, cleartypeNoBg: true, pause: 1 });
+    if($(".wrapper .rotator").length){
+        $(".wrapper .rotator").cycle({ cleartype: true, cleartypeNoBg: true, pause: true,height:"100%",width:"100%" });
+    }
 });

@@ -57,9 +57,8 @@
                    
                 </header>
             </div><umbraco:Macro Alias="HomePageRotator" runat="server"></umbraco:Macro>
-            <div class="bodyContent">
+            <div class="bodyContent home">
                 <section>
-					
                     <asp:ContentPlaceHolder ID="BodyContent" runat="server">
                         <umbraco:Item field="body" runat="server" />
                     </asp:ContentPlaceHolder>
