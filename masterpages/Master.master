@@ -8,10 +8,13 @@
         <meta name="keywords" content="<umbraco:Item field="keywords" runat="server" />" />
         <meta name="author" content="American City Plumbing, Inc." />
         <meta charset="UTF-8">
-        <link href="/css/Default.css" rel="stylesheet" />
-        <script src="/scripts/jQuery/jQuery-1.8.3.js"></script>
-        <script src="/scripts/Default.js"></script>
-
+        <link href="../css/Default.css" rel="stylesheet" />
+        <script src="../scripts/jQuery/jQuery-1.8.3.js"></script>
+        <script src="../scripts/Default.js"></script>
+        <%--<script src="../scripts/jQuery/jQuery.mobile-v1.2.0.js"></script>--%>
+        <!--[if lt IE 9]>
+            <script src="../scripts/html5shiv.js"></script>
+        <![endif]-->
         <title><umbraco:Item field="title" runat="server" /></title>
     </head>
     <body>
@@ -19,39 +22,12 @@
             <div class="header">
                 <header>
                     <a id="logo" href="/">
-                        <img src="/media/303/logo.png" />
+                        <img src="../media/303/logo.png" />
                     </a>
                     <div id="tagLine">We Are As Close As Your Phone ...<div>Providing Quality Service For Over 25 Years</div></div>
-                     <div id="contactHeader"><a href="http://facebook.com"><img src="/media/325/fb.png" alt="Facebook" /></a><a href="http://twitter.com"><img src="/media/320/twitter.png" alt="Twitter" /></a><a href="http://linkedin.com"><img src="/media/453/linkedin.jpg" alt="LinkedIn" /></a><br/>Ph. 260.483.7661</div>
+                     <div id="contactHeader">Ph. 260.483.7661</div>
                     <nav>
-                        <umbraco:Macro  runat="server" language="cshtml">
-                            @inherits umbraco.MacroEngines.DynamicNodeContext
-                            @{ 
-	                            var level = String.IsNullOrEmpty(Parameter.Level) ? 1 : int.Parse(Parameter.Level); 
-	                            var parent = @Model.AncestorOrSelf(level);
-	                            if (parent != null) {
-		                            <ul class="menu">
-                                        <li class='@(Model.Name == "Home"?"selected":"")'><a href="/">Home</a></li>
-		                            @foreach (var item in parent.Children.Where("Visible")) {
-			                            var selected = Array.IndexOf(Model.Path.Split(','), item.Id.ToString()) >= 0 ? " class=\"selected\"" : "";
-			                            var url = item.Url.Replace(".aspx","");
-                                        <li@Html.Raw(selected)>
-				                            <a href='@url'>@item.Name</a>
-                                                @if(item.Children.Where("Visible").Count() > 0){
-                                                    <ul class="subMenu">
-                                                        @foreach(var subItem in item.Children.Where("Visible"))
-                                                        {
-                                                            var subUrl = subItem.Url.Replace(".aspx","");
-                                                            <li><a href="@subUrl">@subItem.Name</a></li>
-                                                        }
-                                                    </ul>
-                                                }   
-                                        </li>
-                                        }
-		                            </ul>
-	                            }
-                            }
-                        </umbraco:Macro>
+                        <umbraco:Macro Alias="MainNavigation" runat="server" />
                     </nav>
                    
                 </header>
@@ -66,35 +42,14 @@
             <div class="footer">
                 <footer>
                     <nav>
-                        <umbraco:Macro  runat="server" language="cshtml">
-
-                            @inherits umbraco.MacroEngines.DynamicNodeContext
-
-                            @helper traverse(dynamic node, bool subLevel){
-                            var maxLevelForSitemap = String.IsNullOrEmpty(Parameter.MaxLevelForSitemap) ? 4 : int.Parse(Parameter.MaxLevelForSitemap); 
-
-                            var values = new Dictionary<string,object>();
-                            values.Add("maxLevelForSitemap", maxLevelForSitemap) ;
-
-                               var items = node.Children.Where("Visible").Where("Level <= maxLevelForSitemap", values);
-                               if (items.Count() > 0) { 
-                               <ul class='@((subLevel) ? "sitemapSublevel" : "sitemap")'>
-                                        @foreach (var item in items) {
-                                            <li>
-					                            <a href='@item.Url.Replace(".aspx","")'>@item.Name</a>
-					                            @traverse(item, true)
-                                            </li>
-                                        }
-                               </ul>
-                                }
-                            }
-                            <div class="footerNav"> 
-                                @traverse(@Model.AncestorOrSelf(), false)
-                            </div>
-
-
-                        </umbraco:Macro>
+                       <umbraco:Macro ID="Macro4" Alias="FooterNavigation" runat="server" />
                     </nav>
+                    <div class="contactFooter">
+                        <a href="http://youtube.com"><img src="/media/596/youtube.jpg" alt="YouTube" /></a>
+                        <a href="http://facebook.com"><img src="/media/325/fb.png" alt="Facebook" /></a>
+                        <a href="http://twitter.com"><img src="/media/320/twitter.png" alt="Twitter" /></a>
+                        <a href="http://linkedin.com"><img src="/media/453/linkedin.jpg" alt="LinkedIn" /></a>
+                    </div>
                     <address>
                         American City Plumbing, Inc.<br />
                         14519 Plank St.<br />

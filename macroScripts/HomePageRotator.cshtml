@@ -1,17 +1,24 @@
 ﻿@using umbraco.NodeFactory
+
 @inherits umbraco.MacroEngines.DynamicNodeContext
+
 
 @{
     var imgs = Model.MediaById(1150);
-    
+    int i = 0;
     if(imgs != null)
     {
         <div class="rotator">
+           
             @foreach(var img in imgs.Children)
             {
+                i++;
                 <div class="item" style="background-image:url(@img.NiceUrl);">
                     <div class="banners">
-                        @img.textForGraphic
+                        <div id="banner@{@i.ToString()}">
+                           <h1>@img.headline</h1>
+                            <p>@img.bannerText</p>
+                        </div>
                     </div>
                 </div>
             }   
