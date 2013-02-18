@@ -153,6 +153,12 @@ a img, img {border:none; }
 #mobileAlert #close {position: absolute; top:20px; right:20px;}
 .ui-loader.ui-corner-all.ui-body-a.ui-loader-default {display:none; }
 
+#ContactForm {width:400px;}
+#ContactForm div {margin:0 0 10px 0;}
+#ContactForm div.required label::after{content:"*"; color:red; position:relative; top:-2px; font-size:14px;}
+#ContactForm div label { display:block; }
+#ContactForm div .ReqErrorMsg { color:red; margin:0 0 0 20px; font-size:10px;}
+
 /* Mobile Devices*/
 @media screen and (max-device-width: 480px) {
 	.wrapper { width:100%; padding:10px; font-size:30px; }

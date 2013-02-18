@@ -1,0 +1,79 @@
+﻿@using System.Text
+@using umbraco
+<form runat="server" id="ContactForm" name="Contact" method="post">
+	<fieldset>
+		<legend>Contact Us</legend>
+		<div class="required">
+			<label for="Name">Name</label>@Html.TextBox("Name", "")
+			<div class="ReqErrorMsg">This field is required.</div>
+		</div>
+		<div class="required">
+			<label for="Phone">Phone</label>@Html.TextBox("Phone")
+			<div class="ReqErrorMsg">This field is required.</div>
+		</div>
+		<div class="required">
+			<label for="Email">Email</label>@Html.TextBox("Email")
+			<div class="ReqErrorMsg">This field is required.</div>
+		</div>
+
+		<button type="submit">Submit</button>
+	</fieldset>
+</form>
+
+@{
+	if(IsPost){
+		StringBuilder body = new StringBuilder();
+		bool valid = true;
+		string fields ="";
+		foreach(string field in this.Request.Form)
+		{
+			if(string.IsNullOrEmpty(this.Request.Form.GetValues(field).First()))
+			{
+				valid = false;
+				fields += (fields.Length > 0) ? ", #" + field : "#" + field; 
+				<script>
+					($("#@field").siblings(".ReqErrorMsg").show())();
+				</script>
+				
+				//continue;
+			}
+			else{
+					<script>
+						($("#@field").siblings(".ReqErrorMsg").hide())();
+				</script>		
+			}
+		}
+		
+		if(valid){
+			library.SendMail("forms@americancityplumbing", 
+				"jonathan.c.read@gmail.com", 
+				"Contact Us Form", 
+				body.ToString(), 
+				true);
+			<script>alert('@this.Request.Form.GetValues("Name").First()');</script>
+		}
+		
+	}
+}
+<script>
+
+	$(document).ready(function () {
+		$(".ReqErrorMsg").hide();
+	});
+	$("#ContactForm").submit(function () {
+		var valid = true;
+		var formData = $(this).serialize().split("&");
+		for(var i in formData)
+		{
+			var field = formData[i].split("=")[0].replace("=","");
+			if (formData[i].split("=")[1].length == 0) {
+				valid = false;
+				$("#" + field).siblings(".ReqErrorMsg").show();
+			}
+			else {
+				$("#" + field).siblings(".ReqErrorMsg").hide();
+			}
+		}
+		return valid;
+	});
+</script>

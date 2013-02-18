@@ -4,7 +4,7 @@
 
 
 @{
-    var imgs = Model.MediaById(1150);
+    var imgs = Model.MediaById(1162);
     int i = 0;
     if(imgs != null)
     {
@@ -17,7 +17,7 @@
                     <div class="banners">
                         <div id="banner@{@i.ToString()}">
                            <h1>@img.headline</h1>
-                            <p>@img.bannerText</p>
+                            <p>@img.content</p>
                         </div>
                     </div>
                 </div>
