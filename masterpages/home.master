@@ -28,13 +28,18 @@
                         <img src="/media/303/logo.png" />
                     </a>
                     <div id="tagLine">We Are As Close As Your Phone ...<div>Providing Quality Service For Over 25 Years</div></div>
-                     <div id="contactHeader">Ph. 260.483.7661</div>
+                     <div id="contactHeader">
+						  260.483.7661<br /><a href="/contact/request-for-service"></a>
+						</div>
                     <nav>
                       <umbraco:Macro Alias="MainNavigation" runat="server" />
                     </nav>
                    
                 </header>
-            </div><umbraco:Macro Alias="HomePageRotator" runat="server"></umbraco:Macro>
+            </div>
+			<div class="rotater-wrapper">
+				<umbraco:Macro Alias="HomePageRotator" runat="server"></umbraco:Macro>
+			</div>
             <div class="bodyContent home">
                 <section>
                     <asp:ContentPlaceHolder ID="BodyContent" runat="server">
