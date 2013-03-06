@@ -12,7 +12,7 @@
     else{
         d = new DynamicNode(Model.Id);
     }
-    if(DateTime.Parse(d.GetProperty("uBlogsyPostDate").Value) <= DateTime.Now){
+    
     <div class="uBlogsy_post uBlogsy_bottom_border">
         <h2>
             <a href="@d.Url" title="@d.GetProperty("uBlogsyContentTitle")"><span>@d.GetProperty("uBlogsyContentTitle")</span></a></h2>
@@ -66,7 +66,6 @@
             </div>
         }
     </div>
-}
 }
 
 

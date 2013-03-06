@@ -40,8 +40,8 @@ body {
 #uBlogsy_header_container { width:100%; clear:both; }
 #uBlogsy_main { width:100%; clear:both;}
 #uBlogsy_footer { width:100%; clear:both;}
-#uBlogsy_left_col { width: 67%; float: left; display: inline; word-wrap: break-word; overflow: hidden;}
-#uBlogsy_right_col { 
+#uBlogsy_left_col { margin-left: 2%; width: 67%; float: left; display: inline; word-wrap: break-word; overflow: hidden;}
+#uBlogsy_right_col { margin-right: 2%;
 width: 25%; float: right; display: inline; word-wrap: break-word; overflow: hidden;}
 
 

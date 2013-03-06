@@ -22,14 +22,12 @@
             <ul>
                 @foreach (DynamicNode n in nodes)
                 {
-                    if(DateTime.Parse(n.GetProperty("uBlogsyPostDate").Value) <= DateTime.Now){
-					<li>
+                    <li>
                         <a href="@n.Url" title="@n.GetProperty("uBlogsyContentTitle").Value">
                             <span>@n.GetProperty("uBlogsyContentTitle").Value</span>
                         </a>
                        @* - <span>@n.GetProperty("uBlogsyPostDate").Value.FormatDateTimeOrdinal("d MMMM yyyy")</span>*@
                     </li>
-				}
                 }
             </ul>
         </div>
