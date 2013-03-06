@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/uBlogsyBase.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+	<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+	<html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" dir="ltr">
+	<head>
+		<%--get title for browser--%>
+		<umbraco:Macro ID="Macro1" runat="server" Language="razor" Alias="uBlogsyBrowserTitle" />
+		<%--get meta title and description--%>
+		<umbraco:Macro ID="Macro5" runat="server" Alias="uBlogsySeoMeta" />
+		<link href="/css/Default.css" rel="stylesheet" />
+		<script src="/scripts/jQuery/jQuery-1.8.3.js"></script>
+		<script src="/scripts/Default.js"></script>
+		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+		<link type="text/css" rel="Stylesheet" media="screen" href="/css/uBlogsy.css" />
+		<!--[if lt IE 9]>
+            <script src="../scripts/html5shiv.js"></script>
+        <![endif]-->
+
+		<asp:ContentPlaceHolder ID="Head" runat="server" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<header>
+					<a id="logo" href="/">
+						<img src="/media/303/logo.png" />
+					</a>
+					<div id="tagLine">
+						We Are As Close As Your Phone ...<div>Providing Quality Service For Over 25 Years</div>
+					</div>
+
+					<div id="contactHeader">
+						260.483.7661<br />
+						<a href="/contact/request-for-service"></a>
+					</div>
+					<nav>
+						<umbraco:Macro ID="Macro2" Alias="MainNavigation" runat="server" />
+					</nav>
+
+				</header>
+			</div>
+			<div class="bodyContent">
+				<section>
+					<form id="uBlogsy_main_form" runat="server">
+						<div id="uBlogsy">
+							<div id="uBlogsy_header_container">
+								<div id="uBlogsy_header_inner">
+									<h1>
+										<%--get site name--%>
+										<umbraco:Macro runat="server" Language="razor">@{ var landing = uBlogsy.BusinessLogic.DataService.Instance.GetLanding(Model.Id);
+                           
+									<a href="@landing.Url">@landing.uBlogsyContentTitle</a> } </umbraco:Macro>
+									</h1>
+								</div>
+							</div>
+							<%--top navigation--%>
+							
+							<div id="uBlogsy_main">
+								<div id="uBlogsy_left_col">
+									<asp:ContentPlaceHolder ID="LeftCol" runat="server" />
+								</div>
+								<div id="uBlogsy_right_col">
+									<%--search--%>
+									<umbraco:Macro Alias="uBlogsySearch" runat="server" />
+
+
+									<%--rss link--%>
+									<umbraco:Macro Alias="uBlogsyShowRSSLink" runat="server" />
+
+
+									<%--list of authors--%>
+									<umbraco:Macro Alias="uBlogsyListAuthors" runat="server" />
+
+
+									<%--list of categories--%>
+									<umbraco:Macro Alias="uBlogsyListCategories" runat="server" />
+
+
+									<%--the awesome tag cloud--%>
+									<umbraco:Macro Alias="uBlogsyListTags" runat="server" ShowCount="0" />
+
+
+									<%--list of related posts--%>
+									<umbraco:Macro Alias="uBlogsyListRelatedPosts" ItemCount="5" MatchCount="1"
+										RelatedAlias="" runat="server" />
+
+
+									<%--list of latest posts--%>
+									<umbraco:Macro Alias="uBlogsyListPosts" ItemCount="5" Small="1" runat="server" />
+
+
+									<%--list of latest comments--%>
+									<umbraco:Macro Alias="uBlogsyListComments" ItemCount="5" Small="1" runat="server" />
+
+
+									<%--archive--%>
+									<umbraco:Macro Alias="uBlogsyListPostArchive" runat="server" />
+
+
+									<%--alternate archive layout --%>
+									<%-- <umbraco:Macro Alias="uBlogsyListPostArchive" AltLayout="1" runat="server" />--%>
+
+
+									<%--list blog roll --%>
+									<umbraco:Macro Alias="uBlogsyListBlogRoll" runat="server" ItemCount="5" />
+								</div>
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
+			<div class="footer">
+				<footer>
+					<nav>
+						<umbraco:Macro ID="Macro4" Alias="FooterNavigation" runat="server" />
+					</nav>
+					<div class="contactFooter">
+						<a href="http://youtube.com">
+							<img src="/media/596/youtube.jpg" alt="YouTube" /></a>
+						<a href="http://facebook.com">
+							<img src="/media/325/fb.png" alt="Facebook" /></a>
+						<a href="http://twitter.com">
+							<img src="/media/320/twitter.png" alt="Twitter" /></a>
+						<a href="http://linkedin.com">
+							<img src="/media/453/linkedin.jpg" alt="LinkedIn" /></a>
+					</div>
+					<address>
+						American City Plumbing, Inc.<br />
+						14519 Plank St.<br />
+						Fort Wayne, In 46818<br />
+						<strong>Phone:</strong> 260.483.7661<br />
+						<strong>Fax:</strong> 260.637.2664<br />
+						<strong>License #:</strong> PC 81065017
+                   
+					</address>
+					<div id="affiliates">
+						<img src="/media/444/affiliates.png" alt="PHCC, BBB, New Haven Chamber of Commerce" />
+					</div>
+				</footer>
+			</div>
+		</div>
+	</body>
+	</html>
+</asp:Content>

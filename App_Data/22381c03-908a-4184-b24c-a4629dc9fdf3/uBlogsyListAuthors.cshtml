@@ -1,0 +1,73 @@
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines;
+@using uBlogsy.Common.Extensions;
+@using uBlogsy.BusinessLogic;
+@{
+    // get landing page
+    var landing = DataService.Instance.GetLanding(Model.Id);
+    IEnumerable<string> authors;
+    
+    if (PageData.Count > 0)
+    {
+        DynamicNode d = new DynamicNode(PageData[0]);
+        <div class="uBlogsy_author">
+            @if (!string.IsNullOrEmpty(@d.GetPropertyValue("uBlogsyPostAuthor")))
+            {
+                authors = GetAuthorOrDefault(d);
+
+                <span>@Dictionary["uBlogsyDicPostWrittenBy"]</span> 
+                <span class="uBlogsy_author_name">
+                @foreach (var a in authors)
+                {
+                    <a href="@landing.Url?author=@a.Trim()" title="@a">@a</a>if (a != authors.Last()){<span>,</span>}
+                }
+                </span> 
+            }
+            else
+            {
+                <span>@Dictionary["uBlogsyDicPostWrittenBy"] @landing.GetPropertyValue("uBlogsyGeneralDefaultAuthor")</span>
+            }
+            <span class="uBlogsy_post_time">@Dictionary["uBlogsyDicPostWrittenAt"] @d.GetProperty("uBlogsyPostDate").Value.FormatDateTime("HH:mm")</span>
+        </div>
+    }
+    else
+    {
+        // get only distinct categories
+        authors = PostService.Instance.GetAuthors(Model.Id);
+
+        if (!authors.Any())
+        {
+            return;
+        }
+        
+        <div class="uBlogsy_authors_container uBlogsy_bottom_border">
+            <h2>
+                @Dictionary["uBlogsyDicAuthors"]</h2>
+            <ul class="uBlogsy_authors">
+                @*// display categories*@
+                @foreach (var a in authors)
+                {
+                    if (!string.IsNullOrEmpty(a.Trim()))
+                    {
+                        <li><a href="@landing.Url?author=@a.Trim()" title="@a">@a</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+}
+
+@functions
+{
+    IEnumerable<string> GetAuthorOrDefault(DynamicNode d)
+    {
+        var authors = d.GetProperty("uBlogsyPostAuthor").Value;
+        if (string.IsNullOrWhiteSpace(authors))
+        {
+            authors = DataService.Instance.GetValueFromAncestor(d.Id, "uBlogsyLanding", "uBlogsyGeneralDefaultAuthor");
+        }
+
+        return authors.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).Distinct();
+    }
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-16"?>
+<dictionary>
+  <item>
+    <key>
+      <string>body</string>
+    </key>
+    <value><![CDATA[American City Plumbing, Inc is a licensed plumbing contractor with over 27 years of experience in commercial plumbing. We work with general contractors for commercial plumbing, new construction, maintenance and remodels for projects such as restaurants, motels, apartment complex’s, home improvement stores, tenant build-outs, and plumbing design builds. We offer a full line of repair and replacement options for fixtures, faucets, valves, and piping. We also do backflow preventor installation, service and testing. Whatever your plumbing needs, we have the right tools for the job.
+American City Plumbing, Inc offers a wide range of travel options for service. We are based in the Fort Wayne, Indiana area but employ numerous journeyman plumbers who are able to travel statewide, throughout Indiana and Michigan, to wherever they are needed. After hours scheduling is also available.
+For more information on our commercial plumbing services or to schedule a service call, please contact us at (260) 483-7661.
+Just a few of our commercial contractors we have worked for:
+D.G. Perry Bradford BuildersDeWees Construction G.M. NorthrupGKB Construction Capitol ConstructionGilliatte Contractors JJO ConstructionParkway Construction Kroger CompanyPatriot Group, Inc. Rafferty ConstructionReece Campbell TempMasterS.C. NestelShawnee ConstructionVenture One ConstructionWalgreen’s]]></value>
+  </item>
+  <item>
+    <key>
+      <string>title</string>
+    </key>
+    <value><![CDATA[Commerical]]></value>
+  </item>
+  <item>
+    <key>
+      <string>id</string>
+    </key>
+    <value><![CDATA[1131]]></value>
+  </item>
+  <item>
+    <key>
+      <string>nodeName</string>
+    </key>
+    <value><![CDATA[Commercial]]></value>
+  </item>
+  <item>
+    <key>
+      <string>updateDate</string>
+    </key>
+    <value><![CDATA[2013-01-24T16:25:29]]></value>
+  </item>
+  <item>
+    <key>
+      <string>writerName</string>
+    </key>
+    <value><![CDATA[admin]]></value>
+  </item>
+  <item>
+    <key>
+      <string>path</string>
+    </key>
+    <value><![CDATA[-1,1079,1085,1131]]></value>
+  </item>
+  <item>
+    <key>
+      <string>nodeTypeAlias</string>
+    </key>
+    <value><![CDATA[SubPage]]></value>
+  </item>
+  <item>
+    <key>
+      <string>parentID</string>
+    </key>
+    <value><![CDATA[1085]]></value>
+  </item>
+  <item>
+    <key>
+      <string>__Path</string>
+    </key>
+    <value><![CDATA[-1,1079,1085,1131]]></value>
+  </item>
+  <item>
+    <key>
+      <string>__NodeTypeAlias</string>
+    </key>
+    <value><![CDATA[SubPage]]></value>
+  </item>
+  <item>
+    <key>
+      <string>__NodeId</string>
+    </key>
+    <value><![CDATA[1131]]></value>
+  </item>
+  <item>
+    <key>
+      <string>__IndexType</string>
+    </key>
+    <value><![CDATA[content]]></value>
+  </item>
+</dictionary>

@@ -5,6 +5,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Umbraco_ACP", "http://local
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/Umbraco_ACP"
 		Debug.AspNetCompiler.PhysicalPath = "..\Umbraco_ACP\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Umbraco_ACP\"
@@ -25,10 +26,13 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{27CD8276-325C-4112-A961-789C745C5A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27CD8276-325C-4112-A961-789C745C5A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CD8276-325C-4112-A961-789C745C5A2D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CD8276-325C-4112-A961-789C745C5A2D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

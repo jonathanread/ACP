@@ -1,0 +1,120 @@
+﻿@{
+    /* LISTS ALL RECENT COMMENTS */
+}  
+
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Common.Extensions
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic
+   
+@{
+    // get item count
+    int count = int.Parse(@Parameter.ItemCount);
+    if (count == -1)
+    {
+        count = int.MaxValue;
+    }
+
+    DynamicNode landing = DataService.Instance.GetLanding(Model.Id);
+    
+    // get list of comments
+    IEnumerable<DynamicNode> nodes;
+
+    DynamicNode d = new DynamicNode(Model.Id);
+    if (Parameter.Small == "1")
+    {
+        // get all comments
+        nodes = ((IEnumerable<DynamicNode>)CommentService.Instance.GetComments(Model.Id, true)).Take(count);
+        
+        // list comments in right panel
+        <div class="uBlogsy_comments_container uBlogsy_bottom_border">
+            <h2>
+                @Dictionary["uBlogsyDicCommentsLatest"]</h2>
+            <ul>
+                @foreach (var c in nodes)
+                {
+                    string url = CommentService.Instance.GetCommentUrl(c, true);
+                
+                    <li>
+                        <a href="@url" title="Comment by @c.GetProperty("uBlogsyCommentName") on @c.Parent.Parent.GetProperty("uBlogsyContentTitle")">By <span>@c.GetProperty("uBlogsyCommentName")</span> on <span>@c.Parent.Parent.GetProperty("uBlogsyContentTitle")</span></a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        // get comments for THIS post
+        nodes = ((IEnumerable<DynamicNode>)CommentService.Instance.GetComments(Model.Id, false)).Take(count);
+        
+        Dictionary<string, string> distinctCommenters = new Dictionary<string, string>();
+        int commenterDistinctCount = 0;
+        
+        // list comments on post
+        <h4>
+            @nodes.Count() @Dictionary["uBlogsyDicComments"] :</h4>
+        <div class="uBlogsy_comments">
+            @foreach (var c in nodes)
+            {
+                if (!distinctCommenters.ContainsKey(c.GetProperty("uBlogsyCommentEmail").Value))
+                {
+                    distinctCommenters.Add(c.GetProperty("uBlogsyCommentEmail").Value, "uBlogsy_commenter" + commenterDistinctCount++);
+                }
+                
+                string url = CommentService.Instance.GetCommentUrl(c, true);
+                string hash = url.Substring(url.LastIndexOf("#")+1);
+                string commentClass = GetCommentClass(c, nodes);
+                string authorText = string.Empty;
+                string authorClass = string.Empty;
+                if (c.GetProperty("uBlogsyCommentIsAuthor").Value == "1")
+                {
+                    authorText = " (author)";
+                    authorClass = "author";
+                }
+                
+                <div class="@commentClass @distinctCommenters[c.GetProperty("uBlogsyCommentEmail").Value] @authorClass">
+                    <div class="uBlogsy_comment_name">
+                        <a href="@url" name="@hash" title="Comment by @c.GetProperty("uBlogsyCommentName") - @c.Parent.Parent.GetProperty("uBlogsyContentTitle")">@c.GetProperty("uBlogsyCommentName").Value</a> @authorText @Dictionary["uBlogsyDicCommentsSaid"]...
+                    </div>
+                    <div class="uBlogsy_comment_message">
+                        @Html.Raw(c.GetPropertyValue("uBlogsyCommentMessage").Replace("\n", "</br>"))</div>
+                   
+                     <div class="uBlogsy_comment_date">@c.CreateDate.ToString().FormatDateTime("MMMM d, yyyy hh:mm")</div>
+
+                     <div class="uBlogsy_comment_footer">
+                         @if (@c.GetProperty("uBlogsyCommentWebsite").Value.Trim() != "http://")
+                         {
+                             <div class="uBlogsy_comment_website">
+                                <span>Website</span> : <a href="@c.GetProperty("uBlogsyCommentWebsite").Value">@c.GetProperty("uBlogsyCommentWebsite").Value </a> </div>
+                         }
+                         
+                         <div class="uBlogsy_view_commenter_posts">
+                            <span>@Dictionary["uBlogsyDicCommentsViewAllBy"]</span>
+                            <a href="@landing.Url?commenter=@c.Name" title="@Dictionary["uBlogsyDicCommentsViewAllBy"] @c.GetProperty("uBlogsyCommentName")">@c.GetProperty("uBlogsyCommentName").Value</a>
+                         </div>
+
+                     </div>
+                </div>
+            }
+        </div>
+    }
+}
+
+
+@functions {
+    private static string GetCommentClass(DynamicNode current, IEnumerable<DynamicNode>nodes) 
+    {
+        string commentClass = "";
+        if (current == nodes.Last())
+        {
+            commentClass = "uBlogsy_comment uBlogsy_last";
+        }
+        else
+        {
+            commentClass = "uBlogsy_comment uBlogsy_bottom_border";
+        }
+        return commentClass;
+    }
+}

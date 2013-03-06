@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/uBlogsyBaseSite.master" AutoEventWireup="true" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Head" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="LeftCol" runat="server">
+    <umbraco:Macro runat="server" Language="razor">@{
+        <h3>
+            <a href="@Model.Url">@Model.uBlogsyContentTitle</a>
+        </h3>
+        } </umbraco:Macro>
+    <div class="uBlogsy_content_body">
+        <umbraco:Item Field="uBlogsyContentBody" runat="server"></umbraco:Item>
+    </div>
+</asp:Content>

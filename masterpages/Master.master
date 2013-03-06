@@ -8,9 +8,9 @@
         <meta name="keywords" content="<umbraco:Item field="keywords" runat="server" />" />
         <meta name="author" content="American City Plumbing, Inc." />
         <meta charset="UTF-8">
-        <link href="../css/Default.css" rel="stylesheet" />
-        <script src="../scripts/jQuery/jQuery-1.8.3.js"></script>
-        <script src="../scripts/Default.js"></script>
+        <link href="/css/Default.css" rel="stylesheet" />
+        <script src="/scripts/jQuery/jQuery-1.8.3.js"></script>
+        <script src="/scripts/Default.js"></script>
         <%--<script src="../scripts/jQuery/jQuery.mobile-v1.2.0.js"></script>--%>
         <!--[if lt IE 9]>
             <script src="../scripts/html5shiv.js"></script>
@@ -22,7 +22,7 @@
             <div class="header">
                 <header>
                     <a id="logo" href="/">
-                        <img src="../media/303/logo.png" />
+                        <img src="/media/303/logo.png" />
                     </a>
                     <div id="tagLine">We Are As Close As Your Phone ...<div>Providing Quality Service For Over 25 Years</div></div>
                     

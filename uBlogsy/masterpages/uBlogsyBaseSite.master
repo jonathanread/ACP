@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/uBlogsyBase.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+    <!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+    <html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" dir="ltr">
+    <head>
+        <%--get title for browser--%>
+        <umbraco:Macro ID="Macro1" runat="server" Language="razor" Alias="uBlogsyBrowserTitle" />
+        <%--get meta title and description--%>
+        <umbraco:Macro ID="Macro5" runat="server" Alias="uBlogsySeoMeta" />
+        <script src="/scripts/jquery-1.6.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+        
+        <link type="text/css" rel="Stylesheet" media="screen" href="/css/uBlogsy.css" />
+        <asp:ContentPlaceHolder ID="Head" runat="server" />
+    </head>
+    <body>
+        <form id="uBlogsy_main_form" runat="server">
+        <div id="uBlogsy">
+            <div id="uBlogsy_header_container">
+                <div id="uBlogsy_header_inner">
+                    <h1>
+                        <%--get site name--%>
+                        <umbraco:Macro runat="server" Language="razor">@{ var landing = uBlogsy.BusinessLogic.DataService.Instance.GetLanding(Model.Id);
+                            <a href="@landing.Url">@landing.uBlogsyContentTitle</a> } </umbraco:Macro>
+                    </h1>
+                </div>
+            </div>
+            <%--top navigation--%>
+            <div id="uBlogsy_nav_container">
+                <umbraco:Macro runat="server" Alias="uBlogsyNavigation" />
+            </div>
+            <div id="uBlogsy_main">
+                <div id="uBlogsy_left_col">
+                    <asp:contentplaceholder id="LeftCol" runat="server" />
+                </div>
+                <div id="uBlogsy_right_col">
+                    <%--search--%>
+                    <umbraco:Macro Alias="uBlogsySearch" runat="server" />
+
+
+                    <%--rss link--%>
+                    <umbraco:Macro Alias="uBlogsyShowRSSLink" runat="server" />
+
+
+                    <%--list of authors--%>
+                    <umbraco:Macro Alias="uBlogsyListAuthors" runat="server" />
+
+
+                    <%--list of categories--%>
+                    <umbraco:Macro Alias="uBlogsyListCategories" runat="server" />
+
+
+                    <%--the awesome tag cloud--%>
+                    <umbraco:Macro Alias="uBlogsyListTags" runat="server" ShowCount="0" />
+
+
+                    <%--list of related posts--%>
+                    <umbraco:Macro Alias="uBlogsyListRelatedPosts" ItemCount="5" MatchCount="1"
+                        RelatedAlias="" runat="server" />
+
+
+                    <%--list of latest posts--%>
+                    <umbraco:Macro Alias="uBlogsyListPosts" ItemCount="5" Small="1" runat="server" />
+
+
+                    <%--list of latest comments--%>
+                    <umbraco:Macro Alias="uBlogsyListComments" ItemCount="5" Small="1" runat="server" />
+
+
+                    <%--archive--%>
+                    <umbraco:Macro Alias="uBlogsyListPostArchive" runat="server" />
+
+
+                    <%--alternate archive layout --%>
+                    <%-- <umbraco:Macro Alias="uBlogsyListPostArchive" AltLayout="1" runat="server" />--%>
+
+
+                    <%--list blog roll --%>
+                    <umbraco:Macro Alias="uBlogsyListBlogRoll" runat="server" ItemCount="5" />
+                </div>
+            </div>
+            <div id="uBlogsy_footer">
+                <div class="uBlogsy_footer_text">
+                    <umbraco:Macro ID="Macro13" runat="server" Language="razor">@{ var landing = uBlogsy.BusinessLogic.DataService.Instance.GetLanding(Model.Id);
+                        @Html.Raw(landing.uBlogsyContentFooter) } </umbraco:Macro>
+                    <div>
+                        Powered by uBlogsy and Umbraco</div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </body>
+    </html>
+</asp:Content>

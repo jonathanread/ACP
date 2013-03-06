@@ -1,0 +1,57 @@
+@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.Common.Extensions
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic
+@{
+    if (Model.NodeTypeAlias != "uBlogsyPost")
+    {
+        return;
+    }
+    int count;
+    string relatedAlias;
+    int matchCount;
+   
+    if (PageData.Count > 0){
+        count = PageData[0];
+        relatedAlias = PageData[1];
+        matchCount = PageData[2];
+    }
+    else{
+        // get item count
+        count = int.Parse(@Parameter.ItemCount);
+ 
+        // can be uBlogsyPostTags, uBlogsyPostCategories, or empty string (gets both)
+         relatedAlias = @Parameter.RelatedAlias;
+ 
+        // get number of items to match
+         matchCount = int.Parse(@Parameter.MatchCount);
+    }
+    if (count == -1)
+    {
+        count = int.MaxValue;
+    }
+
+
+    IEnumerable<DynamicNode> nodes = PostService.Instance.GetRelatedPosts(Model.Id, relatedAlias, matchCount);
+   
+     if (nodes.Count() > 0)
+     {
+        <div class="uBlogsy_related_posts_container uBlogsy_bottom_border">
+            <h2>@library.GetDictionaryItem("uBlogsyDicPostsRelated")</h2>
+            <ul class="uBlogsy_related">
+                @foreach (DynamicNode n in nodes.Take(count))
+                {
+                    <li>
+                        <a href="@n.Url" title="@n.GetProperty("uBlogsyContentTitle").Value">
+                            <span>@n.GetProperty("uBlogsyContentTitle").Value</span>
+                        </a>
+                        - <span class="uBlogsy_post_date">@n.GetProperty("uBlogsyPostDate").Value.FormatDateTimeOrdinal("d MMMM yyyy")</span>
+               
+                    </li>
+                }
+            </ul>
+        </div>
+     }
+}
