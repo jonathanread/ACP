@@ -161,9 +161,9 @@ a img, img {border:none; }
 #ContactForm div .ReqErrorMsg { color:red; margin:0 0 0 20px; font-size:10px;}
 #ContactForm div .radio label { display:inline-block;}
 #ContactForm div .radio label:after { content:" ";}
-#contact {vertical-align:top;}
-#contact #right { display:inline-block; margin: 0 0 0 90px;}
-
+#contact,#right  {vertical-align:top; display:inline-block;}
+#contact #right,#right { display:inline-block; margin: 0 0 0 90px; width:40%;}
+#right h2 { margin:0 0 10px 0;}
 
 .wrapper .bodyContent .team .member { margin:15px 0; min-height:120px;}
 .wrapper .bodyContent .team .member img { float:left; margin:0 20px 0 0;}

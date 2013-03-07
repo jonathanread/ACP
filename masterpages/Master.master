@@ -9,9 +9,9 @@
         <meta name="author" content="American City Plumbing, Inc." />
         <meta charset="UTF-8">
         <link href="/css/Default.css" rel="stylesheet" />
+		<link href="/css/WYSIWYG-Styles.css" rel="stylesheet" />
         <script src="/scripts/jQuery/jQuery-1.8.3.js"></script>
         <script src="/scripts/Default.js"></script>
-        <%--<script src="../scripts/jQuery/jQuery.mobile-v1.2.0.js"></script>--%>
         <!--[if lt IE 9]>
             <script src="../scripts/html5shiv.js"></script>
         <![endif]-->

@@ -52,7 +52,9 @@
         // get all tags
         foreach (var n in posts)
         {
-            allTags.AddRange(n.uBlogsyPostTags.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
+			if(DateTime.Now >= DateTime.Parse(n.GetProperty("uBlogsyPostDate").Value)){
+				allTags.AddRange(n.uBlogsyPostTags.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
+			}
         }
 
         // create dictionary with tags and the number of times they are used

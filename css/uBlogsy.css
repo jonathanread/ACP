@@ -1,7 +1,7 @@
 body {
 }
 
-/* fonts - global */
+/* fonts - global 
 #uBlogsy p, 
 #uBlogsy label, 
 #uBlogsy input, 
@@ -20,7 +20,7 @@ body {
 #uBlogsy input, 
 #uBlogsy textarea,
 .uBlogsy_post_body
- {font-size:13px; }
+ {font-size:13px; }*/
 
 .uBlogsy_post_body, .uBlogsy_content_body{line-height:20px;}
 
@@ -40,9 +40,8 @@ body {
 #uBlogsy_header_container { width:100%; clear:both; }
 #uBlogsy_main { width:100%; clear:both;}
 #uBlogsy_footer { width:100%; clear:both;}
-#uBlogsy_left_col { margin-left: 2%; width: 67%; float: left; display: inline; word-wrap: break-word; overflow: hidden;}
-#uBlogsy_right_col { margin-right: 2%;
-width: 25%; float: right; display: inline; word-wrap: break-word; overflow: hidden;}
+#uBlogsy_left_col {  width: 67%; float: left; display: inline; word-wrap: break-word; overflow: hidden;}
+#uBlogsy_right_col { width: 25%; float: right; display: inline; word-wrap: break-word; overflow: hidden;}
 
 
 /* navigation */
@@ -72,7 +71,7 @@ width: 25%; float: right; display: inline; word-wrap: break-word; overflow: hidd
 #uBlogsy_left_col h2, 
 #uBlogsy_left_col h4 { text-transform:uppercase; color:#505050; }
 
-#uBlogsy_left_col h2{ margin-bottom: 0px;}
+#uBlogsy_left_col h2{ margin-bottom: 0px; font-size:30px;}
 
 
 /* right column header */
@@ -88,11 +87,11 @@ width: 25%; float: right; display: inline; word-wrap: break-word; overflow: hidd
 
 /* post, date and author*/
 .uBlogsy_post { padding:10px 0 25px 0;}
-.uBlogsy_author { padding-top:30px;}
+.uBlogsy_author { padding-top:15px;}
 .uBlogsy_author, 
 .uBlogsy_author_name,
 .uBlogsy_post_date, 
-.uBlogsy_post_time { color:#505050; font-family:Georgia,Serif; font-size:11px;  font-weight:normal;   margin-bottom:0px; }
+.uBlogsy_post_time { color:#505050; margin-bottom:0px; }
 #uBlogsy_left_col .uBlogsy_author .uBlogsy_author_name a {font-family:Georgia,Serif; font-size:11px;}
 
 .uBlogsy_comment_footer{float:right; overflow:hidden;}
@@ -139,22 +138,22 @@ a.uBlogsy_next {float:right;}
 
 
 /* search */
-.uBlogsy_search input[type=text] {  border:1px solid #ccc; height:20px;  margin-bottom:10px; width:200px;}
+.uBlogsy_search input[type=text] {  border:1px solid #ccc; height:20px;  margin-bottom:10px; width:150px;display:inline-block;}
 
 
 .uBlogsy_comment_form input[type=submit], 
 .uBlogsy_search input[type=submit] 
-{ color:#234B7B; background-color:#ffffff; border: 1px solid #cccccc; }
+{ color:#234B7B; background-color:#ffffff; border: 1px solid #cccccc; display:inline-block; }
 
 #btnSearch:hover{ color:#234B7B;}
 #txtSearch{color:#cccccc;}
 
 
-
+.uBlogsy_rss_link_container { height:20px;}
 
 /* right column headers */
 #uBlogsy_right_col h2 { font-size:14px;  font-family:Georgia,Serif;  font-weight:bold;   margin: 20px 0 0 0; text-transform:uppercase;  }
-#uBlogsy_right_col > div { padding-bottom:20px;}
+#uBlogsy_right_col > div { padding-bottom:10px;}
 
 
 /* right coloumn lists */

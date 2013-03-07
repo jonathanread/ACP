@@ -49,7 +49,8 @@
 
             @foreach (var p in posts)
             {
-                <item>
+                if(DateTime.Now >= DateTime.Parse(p.GetProperty("uBlogsyPostDate").Value)){
+				<item>
                     <title>@p.GetProperty("uBlogsyContentTitle").Value</title>
                     <author>@p.GetProperty("uBlogsyPostAuthor").Value</author>
                     <comments>@blogUrl@p.Url</comments>
@@ -58,6 +59,7 @@
                     <guid>@blogUrl@p.Url</guid>
                     <pubDate>@p.GetProperty("uBlogsyPostDate").Value.FormatDateTime("ddd, dd MMMM yyyy HH:mm:ss") </pubDate>
                 </item>
+			}
             }
         </channel>
     </rss>

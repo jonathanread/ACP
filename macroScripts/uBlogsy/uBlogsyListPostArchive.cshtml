@@ -97,7 +97,7 @@
                                 {
                                     break; 
                                 }
-                            
+								if(date.Month <= DateTime.Now.Month){
                                 <li class="uBlogsy_month">
                                     <a class="uBlogsy_month_name" href="#"> <span>@uBlogsy.Common.Helpers.DateHelper.GetMonthName(currentMonth, false)</span> </a>@*render month name*@
                                     <ul class="uBlogsy_post-items">
@@ -106,6 +106,7 @@
                                             node = nodes[i];
                                             date = DateTime.Parse(node.GetProperty("uBlogsyPostDate").Value);
 
+											if(DateTime.Now >= date){
                                             if (date.Month != currentMonth){i--; break; }
                                             if (date.Year != currentYear) { i--; break; }
                                                    
@@ -116,9 +117,10 @@
                                                 </a>
                                             </li>
                                             }
+											}
 
                                     </ul>
-                                </li>
+                                </li>}
                           } 
                           </ul>
                     </li>

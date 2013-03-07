@@ -1,0 +1,117 @@
+﻿@using System.Linq
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+@using uBlogsy.BusinessLogic
+@{
+    
+    List<string> allTags = new List<string>();
+    
+    // get landing page
+    var landing = DataService.Instance.GetLanding(Model.Id);
+
+    // get list of comments
+    DynamicNodeList nodes;
+    
+    // this is a little hacky and i'm not too happy about using PageData
+    if (PageData.Count > 0)
+    {
+        DynamicNode d = new DynamicNode(PageData[0]); 
+        
+        // get tags for this post
+        allTags = new List<string>(d.GetProperty("uBlogsyPostTags").Value.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
+        
+        
+        // ensure no empty tags due to string split on empty string
+        allTags.Remove("");
+
+        // get only distinct tags
+        IEnumerable<string> tags = allTags.Distinct();
+
+        // display tags
+       
+        if (tags.Count() > 0){
+            <div> @Dictionary["uBlogsyDicTags"] : </div> 
+        }
+        <ul class="uBlogsy_tags">
+            @foreach (var t in tags)
+            {
+                if (!string.IsNullOrEmpty(t.Trim()))
+                {
+                    <li><a href="@landing.Url?tag=@Server.UrlEncode(t)" title="@t">@t</a></li>
+                }
+            }    
+        </ul>
+    }
+    else
+    {
+        // it's for the right column tag cloud
+
+        bool showCount = Parameter.ShowCount == "1" ? true : false;
+
+        var posts = PostService.Instance.GetPosts(Model.Id);
+        // get all tags
+        foreach (var n in posts)
+        {
+            allTags.AddRange(n.uBlogsyPostTags.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
+        }
+
+        // create dictionary with tags and the number of times they are used
+        Dictionary<string, int> tagCloud = new Dictionary<string, int>();
+        foreach (var tag in allTags.OrderBy(x => x))
+        {
+            if (tagCloud.ContainsKey(tag))
+            {
+                tagCloud[tag]++;
+            }
+            else
+            {
+                tagCloud.Add(tag, 1);
+            }
+        }
+
+        // add classes for each tag 
+        int classNumber = 1;
+        Dictionary<string, string> tagCloudClassed = new Dictionary<string, string>();
+        foreach (var t in tagCloud.OrderBy(x => x.Value))
+        {
+            if (!string.IsNullOrEmpty(t.Key.Trim()))
+            {
+                // i'm pretty sure that raising the font size by 20px is a bit much but hey. 
+                if (t.Value > 60)
+                {
+                    classNumber = 60;
+                }
+                else
+                {
+                    classNumber = t.Value;
+                }
+
+                var url = landing.Url + "?tag=" + Server.UrlEncode(t.Key);
+                string s;
+                if (showCount)
+                {
+                    s = "<li><a href=\"" + url + "\" class=\"uBlogsy_tag_cloud" + classNumber + "\" title=\"" + t.Key + "\">" + t.Key + "</a><span> (" + t.Value + ")</span></li>";
+                }
+                else
+                {
+                    s = "<li><a href=\"" + url + "\" class=\"uBlogsy_tag_cloud" + classNumber + "\" title=\"" + t.Key + "\">" + t.Key + "</a></li>";
+                }
+                tagCloudClassed.Add(t.Key, s);
+            }
+        }
+
+        // alphbetise the tags and render
+         <div class="uBlogsy_tag_container uBlogsy_bottom_border">
+            <h2>
+                @Dictionary["uBlogsyDicTags"]</h2>
+            <ul class="uBlogsy_tags uBlogsy_tag_cloud">        
+                @foreach (var t in tagCloudClassed.OrderBy(x => x.Key))
+                {
+                    @Html.Raw(t.Value);
+                }
+            </ul>
+        </div>
+    }
+}
+
+
