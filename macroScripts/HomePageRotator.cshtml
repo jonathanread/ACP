@@ -1,24 +1,29 @@
 ﻿@using umbraco.NodeFactory
+@using umbraco.cms.businesslogic.media
+@using System.Xml.Linq
+@using umbraco.MacroEngines
 
 @inherits umbraco.MacroEngines.DynamicNodeContext
 
 
 @{
-    var imgs = Model.MediaById(1162);
+	var imgs = Model.MediaById(1162);
     int i = 0;
+	
     if(imgs != null)
     {
+		DynamicNodeList images = imgs.Children;
+		var imagess = images.OrderByDescending(x => x.SortOrder).Take(images.Count());
 		<div class="prev"></div>
-        <div class="rotator">
-           
-            @foreach(var img in imgs.Children)
+        <div class="rotator">           
+			 @foreach(DynamicNode img in images)
             {
                 i++;
                 <div class="item" style="background-image:url(@img.NiceUrl);">
                     <div class="banners">
                         <div id="banner@{@i.ToString()}">
-                           <h1>@img.headline</h1>
-                            <p>@img.content</p>
+                           <h1>@img.GetProperty("headline").Value</h1>
+                            <p>@img.GetProperty("content").Value</p>
                         </div>
                     </div>
                 </div>

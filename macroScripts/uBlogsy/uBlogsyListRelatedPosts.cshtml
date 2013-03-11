@@ -43,13 +43,16 @@
             <ul class="uBlogsy_related">
                 @foreach (DynamicNode n in nodes.Take(count))
                 {
-                    <li>
-                        <a href="@n.Url" title="@n.GetProperty("uBlogsyContentTitle").Value">
-                            <span>@n.GetProperty("uBlogsyContentTitle").Value</span>
-                        </a>
-                        - <span class="uBlogsy_post_date">@n.GetProperty("uBlogsyPostDate").Value.FormatDateTimeOrdinal("d MMMM yyyy")</span>
+                    if(DateTime.Now >= DateTime.Parse(n.GetProperty("uBlogsyPostDate").Value))
+					{
+						<li>
+							<a href="@n.Url" title="@n.GetProperty("uBlogsyContentTitle").Value">
+								<span>@n.GetProperty("uBlogsyContentTitle").Value</span>
+							</a>
+							- <span class="uBlogsy_post_date">@n.GetProperty("uBlogsyPostDate").Value.FormatDateTimeOrdinal("d MMMM yyyy")</span>
                
-                    </li>
+						</li>
+					}
                 }
             </ul>
         </div>

@@ -16,7 +16,14 @@
                                                         {
                                                             var subUrl = subItem.Url.Replace(".aspx","");
                                                             <li><a href="@subUrl">@subItem.Name</a></li>
+															
                                                         }
+														@if (item.mainNavigationImage != "")
+															{
+																<a href="@url" title="@item.Name">
+																	<img src="@Model.MediaById(item.mainNavigationImage).NiceUrl" alt="@item.Name" />
+																</a>
+															}
                                                     </ul>
                                                 }   
                                         </li>
