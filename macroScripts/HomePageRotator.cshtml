@@ -5,25 +5,27 @@
 
 @inherits umbraco.MacroEngines.DynamicNodeContext
 
-
 @{
-	var imgs = Model.MediaById(1162);
+	//var imgs = Model.MediaById(1162);
+	var imgs = new umbraco.cms.businesslogic.media.Media(1162); 
     int i = 0;
 	
     if(imgs != null)
     {
-		DynamicNodeList images = imgs.Children;
-		var imagess = images.OrderByDescending(x => x.SortOrder).Take(images.Count());
+		
 		<div class="prev"></div>
         <div class="rotator">           
-			 @foreach(DynamicNode img in images)
+			 @foreach(var img in imgs.Children)
             {
                 i++;
-                <div class="item" style="background-image:url(@img.NiceUrl);">
+				var url = Model.MediaById(img.Id);
+
+                <div class="item" style="background-image:url(@url.NiceUrl)">
                     <div class="banners">
                         <div id="banner@{@i.ToString()}">
-                           <h1>@img.GetProperty("headline").Value</h1>
-                            <p>@img.GetProperty("content").Value</p>
+                           <h1>@img.getProperty("headline").Value</h1>
+
+                            <p>@Html.Raw(img.getProperty("content").Value.ToString())</p>
                         </div>
                     </div>
                 </div>

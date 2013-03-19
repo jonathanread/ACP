@@ -9,6 +9,7 @@ $(document).ready(function(){
         });
     if($(".wrapper .rotator").length){
     	$(".wrapper .rotator").cycle({
+			fx:"turnUp",
     		cleartype: true,
     		cleartypeNoBg: true,
     		pause: true,
@@ -35,11 +36,10 @@ function validateFields(formData)
 	var valid = true;
 	var fields = [];
 	var emRegEx = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+	var nameRegEx = /[a-z]{2,20}\d*\s[a-z]{2,30}\d*/i;
 	for (var i in formData) {
 		var field = formData[i].split("=")[0].replace("=", "");
 		fields.push(field);
-
-		
 
 		if (formData[i].split("=")[1].length == 0) {
 			valid = false;
@@ -51,6 +51,15 @@ function validateFields(formData)
 				if (!emRegEx.test($("#" + field).val())) {
 					valid = false;
 					$("#" + field).siblings(".ReqErrorMsg").html("Invalid Email").show();
+				}
+				else {
+					$("#" + field).siblings(".ReqErrorMsg").html("This field is required.").hide();
+				}
+			}
+			if (field == "Name") {
+				if(!nameRegEx.test($("#" + field).val())){
+					valid = false;
+					$("#" + field).siblings(".ReqErrorMsg").html("First and Last Name Please").show();
 				}
 				else {
 					$("#" + field).siblings(".ReqErrorMsg").html("This field is required.").hide();

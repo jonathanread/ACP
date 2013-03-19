@@ -1,5 +1,9 @@
 ﻿@using System.Text
 @using umbraco
+@using PerceptiveMCAPI
+@using PerceptiveMCAPI.Types
+@using PerceptiveMCAPI.Methods
+
 <script src="/scripts/jQuery/jquery.maskedinput.min.js" type="text/javascript"></script>
 <div id="contact">
 	<form runat="server" id="ContactForm" name="Contact" method="post">
@@ -70,6 +74,8 @@
 		StringBuilder emailBody = new StringBuilder("<h1>Contact Us</h1>");
 		bool valid = true;
 		string fields = "";
+		string emails = Model.sendContactEmailsTo;
+		string[] sendList = emails.Split('\n');
 		foreach (string field in this.Request.Form)
 		{
 			if (string.IsNullOrEmpty(this.Request.Form.GetValues(field).First()))
@@ -93,11 +99,28 @@
 
 		if (valid)
 		{
+			foreach (var e in sendList)
+			{
 			library.SendMail("jonathan.c.read@gmail.com",
-				"jonathan.c.read@gmail.com",
+				e,
 				"Contact Us Form",
 				emailBody.ToString(),
 				true);
+			}
+
+			if (this.Request.Form.GetValues("newsletter").First() == "on")
+			{
+				listSubscribe ls = new listSubscribe();
+				Dictionary<string, object> vars = new Dictionary<string, object>();
+				vars.Add("FNAME", this.Request.Form.GetValues("Name").First().Split(' ')[0].ToString());
+				vars.Add("LNAME", this.Request.Form.GetValues("Name").First().Split(' ')[1].ToString());
+				vars.Add("PHONE", this.Request.Form.GetValues("Phone").First());
+				vars.Add("COMMENTS", this.Request.Form.GetValues("Comments").First());
+				vars.Add("CONTMETHOD", this.Request.Form.GetValues("contactMethod").First());
+				vars.Add("TIMECONTAC", this.Request.Form.GetValues("contactTime").First());
+				listSubscribeOutput outs = ls.Execute(new listSubscribeInput("68972d2e33",this.Request.Form.GetValues("Email").First() , vars));
+			}
+			
 			<script>(function () { $("#loader").hide(); $("#ContactForm").html("<h2>Thanks!</h2> We will be in contact with you within one business day.") })();</script>
 		}
 
