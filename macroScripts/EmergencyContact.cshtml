@@ -1,0 +1,70 @@
+﻿@using System.Text
+@using umbraco
+<script src="/scripts/jQuery/jquery.maskedinput.min.js" type="text/javascript"></script>
+<div id="contact">
+	<form runat="server" id="ContactForm" name="Contact" method="post">
+		<fieldset>
+			<legend>Emergency Contact Us</legend>
+			<div class="required">
+				<label for="Name">Name</label>@Html.TextBox("Name")
+				<div class="ReqErrorMsg">This field is required.</div>
+			</div>
+			<div class="required">
+				<label for="Phone">Phone</label>@Html.TextBox("Phone")
+				<div class="ReqErrorMsg">This field is required.</div>
+			</div>
+			<div class="required">
+				<label for="Comments">Tell us about your problem</label>
+				@Html.TextArea("Comments", new { @cols = "40", @rows = "4" })
+				<div class="ReqErrorMsg">This field is required.</div>
+			</div>
+			<button type="submit">Submit</button>
+		</fieldset>
+	</form>
+</div>
+
+@{
+	if (IsPost)
+	{
+		StringBuilder emailBody = new StringBuilder("<h1>Emergency Contact</h1>");
+		bool valid = true;
+		string fields = "";
+		
+		string emails = Model.sendContactEmailsTo;
+		string[] sendList = emails.Split('\n');
+		
+		foreach (string field in this.Request.Form)
+		{
+			if (string.IsNullOrEmpty(this.Request.Form.GetValues(field).First()))
+			{
+				valid = false;
+				fields += (fields.Length > 0) ? ", #" + field : "#" + field; 
+				<script>
+					(function () { $("#@field").siblings(".ReqErrorMsg").show(); })();
+				</script>
+				
+				//continue;
+			}
+			else
+			{
+				<script>
+					(function () { $("#@field").siblings(".ReqErrorMsg").hide(); })();
+				</script>		
+				emailBody.AppendFormat("<b>{0}:</b> {1}<br />", field, this.Request.Form.GetValues(field).First());
+			}
+		}
+
+		if (valid)
+		{
+			foreach(var e in sendList){
+				library.SendMail("jonathan.c.read@gmail.com",
+					e,
+					"Emergency Contact",
+					emailBody.ToString(),
+					true);
+			}
+			<script>(function () { $("#loader").hide(); $("#ContactForm").html("<h2>Thanks!</h2> We will be in contact with you within one hour.") })();</script>
+		}
+
+	}
+}

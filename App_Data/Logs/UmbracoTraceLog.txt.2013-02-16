@@ -1,0 +1,26 @@
+2013-02-16 16:27:33,272 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-02-16 16:27:33,437 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-02-16 16:27:33,446 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 7ms)
+2013-02-16 16:27:33,911 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 5 (took 454ms)
+2013-02-16 16:27:33,918 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 2ms)
+2013-02-16 16:27:33,919 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IMacroGuiRendering, found 13 (took 1ms)
+2013-02-16 16:27:33,921 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IPackageAction, found 12 (took 1ms)
+2013-02-16 16:27:33,923 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 1ms)
+2013-02-16 16:27:33,925 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+2013-02-16 16:27:33,929 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
+2013-02-16 16:27:34,489 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2013-02-16 16:27:34,542 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 52ms)
+2013-02-16 16:27:34,742 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 2ms)
+2013-02-16 16:27:34,759 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 6ms)
+2013-02-16 16:27:34,797 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 2ms)
+2013-02-16 16:27:35,547 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 2267ms)
+2013-02-16 16:27:37,233 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 1 (took 1ms)
+2013-02-16 16:27:38,841 [5] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 7] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-02-16 16:27:39,709 [5] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 6] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-02-16 16:27:52,228 [5] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 11] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-02-16 16:27:52,293 [5] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 13] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-02-16 16:28:27,638 [5] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 1ms)
+2013-02-16 16:28:27,640 [5] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.IAction, found 35 (took 0ms)
+2013-02-16 16:28:27,718 [5] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 1ms)
+2013-02-16 16:28:32,627 [5] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 8ms)
+2013-02-16 16:45:10,023 [5] INFO  Umbraco.Core.PluginManager - [Thread 53] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 2 (took 2ms)

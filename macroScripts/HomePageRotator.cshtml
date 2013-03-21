@@ -1,0 +1,37 @@
+﻿@using umbraco.NodeFactory
+@using umbraco.cms.businesslogic.media
+@using System.Xml.Linq
+@using umbraco.MacroEngines
+
+@inherits umbraco.MacroEngines.DynamicNodeContext
+
+@{
+	//var imgs = Model.MediaById(1162);
+	var imgs = new umbraco.cms.businesslogic.media.Media(1162); 
+    int i = 0;
+	
+    if(imgs != null)
+    {
+		
+		<div class="prev"></div>
+        <div class="rotator">           
+			 @foreach(var img in imgs.Children)
+            {
+                i++;
+				var url = Model.MediaById(img.Id);
+
+                <div class="item" style="background-image:url(@url.NiceUrl)">
+                    <div class="banners">
+                        <div id="banner@{@i.ToString()}">
+                           <h1>@img.getProperty("headline").Value</h1>
+
+                            <p>@Html.Raw(img.getProperty("content").Value.ToString())</p>
+                        </div>
+                    </div>
+                </div>
+            }   
+        </div>
+		<div class="next"></div>
+		<div class="rotatorPager"></div>
+    }
+}

@@ -1,0 +1,129 @@
+﻿@using System.Text
+@using umbraco
+@using PerceptiveMCAPI
+@using PerceptiveMCAPI.Types
+@using PerceptiveMCAPI.Methods
+
+<script src="/scripts/jQuery/jquery.maskedinput.min.js" type="text/javascript"></script>
+<div id="contact">
+	<form runat="server" id="ContactForm" name="Contact" method="post">
+		<fieldset  class="pie">
+			<legend>Contact Us Now</legend>
+			<div class="required">
+				<label for="Name">Name</label>@Html.TextBox("Name")
+				<div class="ReqErrorMsg">This field is required.</div>
+			</div>
+			<div class="required">
+				<label for="Phone">Phone</label>@Html.TextBox("Phone")
+				<div class="ReqErrorMsg">This field is required.</div>
+			</div>
+			<div class="required">
+				<label for="Email">Email</label>@Html.TextBox("Email")
+				<div class="ReqErrorMsg">This field is required.</div>
+			</div>
+			<div class="required">
+				<label for="contactMethod">Best way to contact you?</label>
+				<div class="radio">
+					<label>Email</label>
+					@Html.RadioButton("contactMethod", "Email")
+					<label>Phone</label>
+					@Html.RadioButton("contactMethod", "Phone")
+					<div class="ReqErrorMsg">This field is required.</div>
+				</div>
+			</div>
+			<div class="required">
+				<label for="contactTime">Best time to contact you?</label>
+				<div class="radio">
+					<label>AM</label>
+					@Html.RadioButton("contactTime", "AM")
+					<label>PM</label>
+					@Html.RadioButton("contactTime", "PM")
+					<div class="ReqErrorMsg">This field is required.</div>
+				</div>
+			</div>
+			<div class="required">
+				<label for="Comments">Questions/Comments</label>
+				@Html.TextArea("Comments", new { @cols = "40", @rows = "4" })
+				<div class="ReqErrorMsg">This field is required.</div>
+			</div>
+			<div>
+				<label for="newsletter">Receive our periodic Newsletter?</label>
+				@Html.CheckBox("newsletter", true)
+			</div>
+			<button type="submit">Submit</button>
+		</fieldset>
+	</form>
+	<div id="right">
+		<img src="/media/2919/building.jpg" />
+		<address>
+			American City Plumbing, Inc.<br />
+			14519 Plank St.<br />
+			Fort Wayne, In 46818<br />
+			<strong>Phone:</strong> 260.483.7661<br />
+			<strong>Fax:</strong> 260.637.2664<br />
+			<strong>License #:</strong> PC 81065017   
+		</address>
+		<iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=American+city+plumbing&amp;aq=&amp;sll=41.648175,-85.003789&amp;sspn=0.117882,0.264187&amp;ie=UTF8&amp;hq=American+city+plumbing&amp;hnear=&amp;t=m&amp;ll=41.352072,-85.120697&amp;spn=0.412352,0.547943&amp;z=10&amp;iwloc=A&amp;output=embed"></iframe>
+	</div>
+	
+</div>
+
+@{
+	if (IsPost)
+	{
+		StringBuilder emailBody = new StringBuilder("<h1>Contact Us</h1>");
+		bool valid = true;
+		string fields = "";
+		string emails = Model.sendContactEmailsTo;
+		string[] sendList = emails.Split('\n');
+		foreach (string field in this.Request.Form)
+		{
+			if (string.IsNullOrEmpty(this.Request.Form.GetValues(field).First()))
+			{
+				valid = false;
+				fields += (fields.Length > 0) ? ", #" + field : "#" + field; 
+				<script>
+					(function () { $("#@field").siblings(".ReqErrorMsg").show(); })();
+				</script>
+				
+				//continue;
+			}
+			else
+			{
+				<script>
+					(function () { $("#@field").siblings(".ReqErrorMsg").hide(); })();
+				</script>		
+				emailBody.AppendFormat("<b>{0}:</b> {1}<br />", field, this.Request.Form.GetValues(field).First());
+			}
+		}
+
+		if (valid)
+		{
+			foreach (var e in sendList)
+			{
+			library.SendMail("jonathan.c.read@gmail.com",
+				e,
+				"Contact Us Form",
+				emailBody.ToString(),
+				true);
+			}
+
+			if (this.Request.Form.GetValues("newsletter").First() == "on")
+			{
+				listSubscribe ls = new listSubscribe();
+				Dictionary<string, object> vars = new Dictionary<string, object>();
+				vars.Add("FNAME", this.Request.Form.GetValues("Name").First().Split(' ')[0].ToString());
+				vars.Add("LNAME", this.Request.Form.GetValues("Name").First().Split(' ')[1].ToString());
+				vars.Add("PHONE", this.Request.Form.GetValues("Phone").First());
+				vars.Add("COMMENTS", this.Request.Form.GetValues("Comments").First());
+				vars.Add("CONTMETHOD", this.Request.Form.GetValues("contactMethod").First());
+				vars.Add("TIMECONTAC", this.Request.Form.GetValues("contactTime").First());
+				listSubscribeOutput outs = ls.Execute(new listSubscribeInput("68972d2e33",this.Request.Form.GetValues("Email").First() , vars));
+			}
+			
+			<script>(function () { $("#loader").hide(); $("#ContactForm").html("<h2>Thanks!</h2> We will be in contact with you within one business day.") })();</script>
+		}
+
+	}
+}
+

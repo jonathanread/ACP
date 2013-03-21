@@ -1,0 +1,116 @@
+﻿@using uBlogsy.Common.Extensions;
+@using uBlogsy.Common.Helpers;
+@using umbraco.MacroEngines;
+@using uBlogsy.BusinessLogic;
+
+@{
+    DynamicNode d;
+    
+    if (PageData.Count > 0){
+        d = new DynamicNode(PageData[0]);
+    }
+    else{
+        d = new DynamicNode(Model.Id);
+    }
+    
+    <div class="uBlogsy_post uBlogsy_bottom_border">
+        <h2>
+            <a href="@d.Url" title="@d.GetProperty("uBlogsyContentTitle")"><span>@d.GetProperty("uBlogsyContentTitle")</span></a></h2>
+        <h3 class="uBlogsy_post_date">@d.GetProperty("uBlogsyPostDate").Value.FormatDateTime("dddd MMMM d, yyyy")</h3>
+        <div class="uBlogsy_post_body">
+           @RenderPostBody(d) 
+        </div>
+
+        @RenderPage("/macroScripts/uBlogsy/uBlogsyListAuthors.cshtml", d.Id)
+
+        <div class="uBlogsy_comment_count">
+            @{
+                var comments = CommentService.Instance.GetComments(d.Id, false).ToList();
+
+                if (comments.Count == 0)
+                {
+                     <a href="@d.Url" title="@d.GetProperty("uBlogsyContentTitle")">0 Comments</a>
+                }
+                else
+                {
+                    string url = CommentService.Instance.GetCommentUrl(comments.First(), true);
+                    <a href="@url" title="Comments">@comments.Count @Dictionary["uBlogsyDicComments"]</a>
+                }
+            }
+        </div>
+
+        @*list tags*@
+        <div class="uBlogsy_tag_list"> @RenderPage("/macroScripts/uBlogsy/uBlogsyListTags.cshtml", @d.Id) </div>
+        
+        @*list categories*@
+        <div class="uBlogsy_category_list"> @RenderPage("/macroScripts/uBlogsy/uBlogsyListCategories.cshtml", @d.Id) </div>
+
+        @*Social media links*@
+        @RenderSocialMedia()
+        
+        @*next and previous links*@
+        @if (Model.NodeTypeAlias == "uBlogsyPost")
+        {
+            DynamicNode prev = PostService.Instance.GetNextPost(d);
+            DynamicNode next = PostService.Instance.GetPreviousPost(d);
+            <div class="uBlogsy_next_prev">
+                @if (prev != null)
+                {
+                    <a href="@prev.Url" class="uBlogsy_prev" title="Older Posts"> @Dictionary["uBlogsyDicPaginationOlder"]</a>
+                }
+            
+                @if (next != null)
+                {
+                    <a href="@next.Url" class="uBlogsy_next" title="Newer Posts">@Dictionary["uBlogsyDicPaginationNewer"]</a>
+                }
+            </div>
+        }
+    </div>
+}
+
+
+
+
+
+@helper RenderSocialMedia(){
+    string useSummary = DataService.Instance.GetValueFromLanding(Model.Id, "uBlogsyGeneralShowSocialMedia");
+    if (useSummary == "1" && Model.NodeTypeAlias != "uBlogsyLanding")
+    {
+       @* <div class="addthis_toolbox addthis_default_style">
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+            <a class="addthis_button_compact"></a>
+        </div>*@
+    
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        </div>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f20a32b369fc730"></script>
+        <!-- AddThis Button END -->
+     }
+}
+
+
+
+
+@helper RenderPostBody(DynamicNode d)
+    {
+        string useSummary = DataService.Instance.GetValueFromLanding(Model.Id, "uBlogsyGeneralUseSummary");
+        if (useSummary == "1"
+            && Model.NodeTypeAlias == "uBlogsyLanding"
+            && d.GetProperty("uBlogsyContentSummary").Value.Trim() != string.Empty
+            )
+        {
+        @Html.Raw(d.GetProperty("uBlogsyContentSummary").Value)
+        }
+        else
+        {
+        @Html.Raw(umbraco.library.RenderMacroContent(d.GetProperty("uBlogsyContentBody").Value, d.Id))
+        } 
+}
+

@@ -1,0 +1,17 @@
+﻿@using umbraco.NodeFactory
+@inherits umbraco.MacroEngines.DynamicNodeContext
+
+@{
+	var team = Model.MediaById(1166);
+	<div class="team">
+	@foreach(var member in team.Children)
+	{
+		<div class="member">
+			<img src="@member.image" alt="@member.Name" height="100px" width="100px" />
+			<h1>@member.Name</h1><span>, @member.title</span>
+			<p>@member.about</p>
+		</div>
+	}
+
+	</div>
+}

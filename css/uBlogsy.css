@@ -1,0 +1,334 @@
+body {
+}
+
+/* fonts - global 
+#uBlogsy p, 
+#uBlogsy label, 
+#uBlogsy input, 
+#uBlogsy textarea, 
+#uBlogsy a, 
+.uBlogsy_post_body
+{ font-family:Arial; }
+
+
+#uBlogsy h1, 
+#uBlogsy h3, 
+#uBlogsy h4 { font-family:Georgia,Serif; color: #505050;}
+
+#uBlogsy p, 
+#uBlogsy label, 
+#uBlogsy input, 
+#uBlogsy textarea,
+.uBlogsy_post_body
+ {font-size:13px; }*/
+
+.uBlogsy_post_body, .uBlogsy_content_body{line-height:20px;}
+
+
+/* force browser to evaluate box model */
+#uBlogsy_header_container,
+#uBlogsy_nav_container, 
+#uBlogsy_main, 
+#uBlogsy_footer, 
+#uBlogsy_left_col,  
+#uBlogsy_right_col,
+.uBlogsy_tag_list  { overflow:hidden; }
+
+
+/* layout */
+
+#uBlogsy_header_container { width:100%; clear:both; }
+#uBlogsy_main { width:100%; clear:both;}
+#uBlogsy_footer { width:100%; clear:both;}
+#uBlogsy_left_col {  width: 67%; float: left; display: inline; word-wrap: break-word; overflow: hidden;}
+#uBlogsy_right_col { width: 25%; float: right; display: inline; word-wrap: break-word; overflow: hidden;}
+
+
+/* navigation */
+#uBlogsy_nav_container { clear:both; height:50px; width:100%; text-align:center;  }
+#uBlogsy_nav { list-style-type:none; display:block; margin:0; padding: 20px 0 0 0px; margin-left: 2%;}
+#uBlogsy_nav li { display:block; float:left; padding-right:30px;}
+#uBlogsy_nav li a { font-size:13px; color:#505050;}
+#uBlogsy_nav li a.uBlogsy_current { font-weight:bold; }
+
+/* main header */
+#uBlogsy_header_container { padding: 0; }
+#uBlogsy_header_container h1 { font-size:26px; margin:5px; text-align:center; }
+#uBlogsy_header_container h1 a {font-family:Georgia,Serif;  color:#972323; letter-spacing:3px; }
+#uBlogsy_header_inner {margin:0 50px; padding:0; }
+
+
+/* footer */
+#uBlogsy_footer { padding:0px; margin:30px 0; border-top:1px solid lightgrey; }
+#uBlogsy_footer .uBlogsy_footer_text{ color:#505050; font-size:11px; float:right; margin-top:10px;}
+
+
+
+/* left column headers */
+#uBlogsy_left_col h3 a { color:#234B7B; font-size:18px; font-weight:normal;}
+#uBlogsy_left_col h3 a:hover {color: #234B7B;}
+#uBlogsy_left_col h3 { margin-top: 5px;}
+#uBlogsy_left_col h2, 
+#uBlogsy_left_col h4 { text-transform:uppercase; color:#505050; }
+
+#uBlogsy_left_col h2{ margin-bottom: 0px; font-size:30px;}
+
+
+/* right column header */
+#uBlogsy_right_col h2 { text-transform:uppercase; color:#505050; }
+
+
+/* links */
+#uBlogsy a { color: #234B7B; text-decoration:none; }
+#uBlogsy a:hover { text-decoration:underline; }
+#uBlogsy_right_col a:hover {color: #234B7B; }
+
+
+
+/* post, date and author*/
+.uBlogsy_post { padding:10px 0 25px 0;}
+.uBlogsy_author { padding-top:15px;}
+.uBlogsy_author, 
+.uBlogsy_author_name,
+.uBlogsy_post_date, 
+.uBlogsy_post_time { color:#505050; margin-bottom:0px; }
+#uBlogsy_left_col .uBlogsy_author .uBlogsy_author_name a {font-family:Georgia,Serif; font-size:11px;}
+
+.uBlogsy_comment_footer{float:right; overflow:hidden;}
+.uBlogsy_view_commenter_posts{ float:right; color:#505050; font-size:12px; clear:right;}
+.uBlogsy_view_commenter_posts a{ font-size:11px;}
+
+.uBlogsy_next_prev{padding-top:40px;overflow: hidden;clear: both;}
+#uBlogsy .uBlogsy_next_prev a { color:#505050; font-size:13px;}
+a.uBlogsy_prev {float:left;}
+a.uBlogsy_next {float:right;}
+
+
+/* comments */
+.uBlogsy_comments_container { padding-bottom:10px;}
+.uBlogsy_comments_container h4 { font-size:13px; letter-spacing:2.6px; margin-bottom:0; }
+#uBlogsy_left_col .uBlogsy_comments { font-size:13px; padding-left:30px; }
+.uBlogsy_comment { padding:20px 0; overflow:hidden;}
+.uBlogsy_comment.uBlogsy_last{ border-bottom:0;}
+.uBlogsy_comment h2 { font-size:13px; letter-spacing:2.6px; }
+.uBlogsy_comment_name { padding-bottom:10px; }
+.uBlogsy_comment_message { padding-bottom:20px; }
+.uBlogsy_comment_date {float:left; clear:left; margin-top:0px; color:#505050; text-transform:uppercase;}
+.uBlogsy_comment_website{ float:right; margin-left:30px; font-size:11px; }
+.uBlogsy_comment_website span{ color:#505050; font-family:Georgia,Serif;}
+
+#uBlogsy_left_col .uBlogsy_post .uBlogsy_comment_count a{font-size:11px; font-family:Georgia,Serif; }
+.uBlogsy_comment_count{overflow:hidden;}
+
+
+
+/* comment form */
+.uBlogsy_comment_form h4 { font-size:13px; letter-spacing:2.6px;  }
+.uBlogsy_comment_form label {  display:block; float:left; margin-top:3px; width:70px; }
+.uBlogsy_comment_form input[type=text] {  border:1px solid lightgrey; height:20px;  margin-bottom:10px; width:400px;}
+.uBlogsy_comment_form input[type=submit] { margin-left:70px; }
+.uBlogsy_comment_form textarea {  border:1px solid lightgrey; height:150px; width:400px; margin-bottom: 10px;}
+.uBlogsy_row{ overflow:hidden; }
+
+.uBlogsy_row.uBlogsy_Subscribe{padding-bottom:10px;}
+.uBlogsy_row.uBlogsy_Subscribe input[type=checkbox] { float:left; margin-left:70px}
+.uBlogsy_row.uBlogsy_Subscribe label {width:200px; padding-left:5px; font-size:11px;}
+
+
+
+
+/* search */
+.uBlogsy_search input[type=text] {  border:1px solid #ccc; height:20px;  margin-bottom:10px; width:150px;display:inline-block;}
+
+
+.uBlogsy_comment_form input[type=submit], 
+.uBlogsy_search input[type=submit] 
+{ color:#234B7B; background-color:#ffffff; border: 1px solid #cccccc; display:inline-block; }
+
+#btnSearch:hover{ color:#234B7B;}
+#txtSearch{color:#cccccc;}
+
+
+.uBlogsy_rss_link_container { height:20px;}
+
+/* right column headers */
+#uBlogsy_right_col h2 { font-size:14px;  font-family:Georgia,Serif;  font-weight:bold;   margin: 20px 0 0 0; text-transform:uppercase;  }
+#uBlogsy_right_col > div { padding-bottom:10px;}
+
+
+/* right coloumn lists */
+#uBlogsy_right_col ul { font-size:13px; list-style-type:none; margin:5px 0;  padding-left:0px; overflow:hidden; }
+#uBlogsy_right_col ul li{ line-height:20px; } 
+
+
+/* post archive */
+#uBlogsy_post_archive ul { /*padding-left:10px;*/ list-style-type:none; }
+#uBlogsy_post_archive ul ul { padding-left:15px; list-style-type:none; }
+
+#uBlogsy_post_archive .uBlogsy_post-items {display:none; margin-top:0;}
+#uBlogsy_post_archive .uBlogsy_months{display:none;}
+
+/* post archive - alternate layout */
+.uBlogsy_post_archive_alt .uBlogsy_year_first .uBlogsy_year_name{display:none; }
+#uBlogsy_right_col .uBlogsy_post_archive_alt .uBlogsy_year_first .uBlogsy_months{ padding-left:0px; margin-top: 0;}
+   
+   
+   
+/* page */
+.uBlogsy_content_body{}
+
+
+/* rss logo */
+.uBlogsy_feed { margin-left: 3px; padding: 0 0 0 19px; background: url("/images/uBlogsy_feed-icon-14x14.png") no-repeat 0 50%; height: 15px; display: block; float: left; overflow: hidden;}
+
+
+/* bottom border */
+.uBlogsy_bottom_border {  border-bottom-color: #CCC; border-bottom-style: dotted; border-bottom-width: 1px; }
+
+
+
+
+/* tags and categories */
+.uBlogsy_tag_list, .uBlogsy_category_list { padding-top:10px; color:#505050;  font-family:Georgia,Serif; font-size:11px; }
+.uBlogsy_tag_list > div { float:left; padding-right:5px;}
+.uBlogsy_tag_list .uBlogsy_tags li a, .uBlogsy_category_list .uBlogsy_categories li a{ font-family:Georgia,Serif; font-size:11px; }
+.uBlogsy_tag_list .uBlogsy_tags, .uBlogsy_category_list .uBlogsy_categories{ list-style-type:none; float:left; padding:0; margin:0;}
+.uBlogsy_tag_list .uBlogsy_tags li, .uBlogsy_category_list .uBlogsy_categories li{ display:block; float:left; padding-right:10px;}
+.uBlogsy_category_list{ padding-top:0px;}
+.uBlogsy_category_list h4{float: left; margin: 0px;padding-right: 10px;}
+
+
+
+/* override-tastic! */
+#uBlogsy .uBlogsy_tag_list .uBlogsy_tags li a{ font-family:Georgia,Serif; font-size:11px;  }
+
+
+/*add this*/
+#uBlogsy .addthis_toolbox { float:left;clear: both;margin-top: 30px;}
+#uBlogsy .addthis_toolbox a { display:block; float:right;}
+
+
+/* pagination */
+#uBlogsy_pagination { display:block; float:right; overflow:hidden;}
+#uBlogsy_pagination li{ list-style-type:none; display:block; float:left; border: 1px solid #CCC; height: 20px; width: 20px; margin:1px;}
+#uBlogsy_pagination li a { font-family: Georgia,Serif; display:block; padding :3px 0 0 6px; font-size:11px;}
+#uBlogsy_pagination li.uBlogsy_page_prev span, #uBlogsy_pagination li.uBlogsy_page_next span { font-family: Georgia,Serif; font-size:11px; display:block; padding :2px 0 0 5px; font-size:12px; color:#CCC}
+#uBlogsy_pagination .uBlogsy_page_next, #uBlogsy_pagination .uBlogsy_page_prev{ width:40px;}
+
+#uBlogsy_pagination li.uBlogsy_current a{font-weight:bold;}
+#uBlogsy_pagination li.uBlogsy_current span{padding:2px 0 0 6px; font-family: Georgia,Serif; font-size:11px; display:block;}
+
+/* tag cloud */
+.uBlogsy_tag_cloud li { display:inline-block; padding-right:10px; }
+.uBlogsy_tag_cloud li span {color:#505050}
+.uBlogsy_tag_cloud1 { font-size: 11px;}
+.uBlogsy_tag_cloud2 { font-size: 12px;}
+.uBlogsy_tag_cloud3 { font-size: 13px;}
+.uBlogsy_tag_cloud4 { font-size: 14px;}
+.uBlogsy_tag_cloud5 { font-size: 15px;}
+.uBlogsy_tag_cloud6 { font-size: 16px;}
+.uBlogsy_tag_cloud7 { font-size: 17px;}
+.uBlogsy_tag_cloud8 { font-size: 18px;}
+.uBlogsy_tag_cloud9 { font-size: 19px;}
+.uBlogsy_tag_cloud10 { font-size: 20px;}
+.uBlogsy_tag_cloud11 { font-size: 21px;}
+.uBlogsy_tag_cloud12 { font-size: 22px;}
+.uBlogsy_tag_cloud13 { font-size: 23px;}
+.uBlogsy_tag_cloud14 { font-size: 24px;}
+.uBlogsy_tag_cloud15 { font-size: 25px;}
+.uBlogsy_tag_cloud16 { font-size: 26px;}
+.uBlogsy_tag_cloud17 { font-size: 27px;}
+.uBlogsy_tag_cloud18 { font-size: 28px;}
+.uBlogsy_tag_cloud19 { font-size: 39px;}
+.uBlogsy_tag_cloud30 { font-size: 40px;}
+.uBlogsy_tag_cloud31 { font-size: 41px;}
+.uBlogsy_tag_cloud32 { font-size: 42px;}
+.uBlogsy_tag_cloud33 { font-size: 43px;}
+.uBlogsy_tag_cloud34 { font-size: 44px;}
+.uBlogsy_tag_cloud35 { font-size: 45px;}
+.uBlogsy_tag_cloud36 { font-size: 46px;}
+.uBlogsy_tag_cloud37 { font-size: 47px;}
+.uBlogsy_tag_cloud38 { font-size: 48px;}
+.uBlogsy_tag_cloud39 { font-size: 49px;}
+.uBlogsy_tag_cloud40 { font-size: 50px;}
+.uBlogsy_tag_cloud40 { font-size: 50px;}
+.uBlogsy_tag_cloud41 { font-size: 51px;}
+.uBlogsy_tag_cloud42 { font-size: 52px;}
+.uBlogsy_tag_cloud43 { font-size: 53px;}
+.uBlogsy_tag_cloud44 { font-size: 54px;}
+.uBlogsy_tag_cloud45 { font-size: 55px;}
+.uBlogsy_tag_cloud46 { font-size: 56px;}
+.uBlogsy_tag_cloud47 { font-size: 57px;}
+.uBlogsy_tag_cloud48 { font-size: 58px;}
+.uBlogsy_tag_cloud49 { font-size: 59px;}
+.uBlogsy_tag_cloud50 { font-size: 60px;}
+.uBlogsy_tag_cloud50 { font-size: 60px;}
+.uBlogsy_tag_cloud51 { font-size: 61px;}
+.uBlogsy_tag_cloud52 { font-size: 62px;}
+.uBlogsy_tag_cloud53 { font-size: 63px;}
+.uBlogsy_tag_cloud54 { font-size: 64px;}
+.uBlogsy_tag_cloud55 { font-size: 65px;}
+.uBlogsy_tag_cloud56 { font-size: 66px;}
+.uBlogsy_tag_cloud57 { font-size: 67px;}
+.uBlogsy_tag_cloud58 { font-size: 68px;}
+.uBlogsy_tag_cloud59 { font-size: 69px;}
+.uBlogsy_tag_cloud60 { font-size: 70px;}
+
+
+
+/* commenter classes - add styles here for different commenters */
+.uBlogsy_commenter1{}
+.uBlogsy_commenter2{}
+.uBlogsy_commenter3{}
+.uBlogsy_commenter4{}
+.uBlogsy_commenter5{}
+.uBlogsy_commenter6{}
+.uBlogsy_commenter7{}
+.uBlogsy_commenter8{}
+.uBlogsy_commenter9{}
+.uBlogsy_commenter10{}
+.uBlogsy_commenter11{}
+.uBlogsy_commenter12{}
+.uBlogsy_commenter13{}
+.uBlogsy_commenter14{}
+.uBlogsy_commenter15{}
+.uBlogsy_commenter16{}
+.uBlogsy_commenter17{}
+.uBlogsy_commenter18{}
+.uBlogsy_commenter19{}
+.uBlogsy_commenter20{}
+.uBlogsy_commenter21{}
+.uBlogsy_commenter22{}
+.uBlogsy_commenter23{}
+.uBlogsy_commenter24{}
+.uBlogsy_commenter25{}
+.uBlogsy_commenter26{}
+.uBlogsy_commenter27{}
+.uBlogsy_commenter28{}
+.uBlogsy_commenter29{}
+.uBlogsy_commenter30{}
+.uBlogsy_commenter31{}
+.uBlogsy_commenter32{}
+.uBlogsy_commenter33{}
+.uBlogsy_commenter34{}
+.uBlogsy_commenter35{}
+.uBlogsy_commenter36{}
+.uBlogsy_commenter37{}
+.uBlogsy_commenter38{}
+.uBlogsy_commenter39{}
+.uBlogsy_commenter40{}
+.uBlogsy_commenter41{}
+.uBlogsy_commenter42{}
+.uBlogsy_commenter43{}
+.uBlogsy_commenter44{}
+.uBlogsy_commenter45{}
+.uBlogsy_commenter46{}
+.uBlogsy_commenter47{}
+.uBlogsy_commenter48{}
+.uBlogsy_commenter49{}
+.uBlogsy_commenter50{}
+/* if you have more than 50 distinct commenters on your post then you're doing well! Add more .uBlogsy_commenter's if you wish */
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

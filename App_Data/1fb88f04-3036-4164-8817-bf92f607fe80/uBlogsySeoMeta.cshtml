@@ -1,0 +1,21 @@
+﻿@using System.Text.RegularExpressions
+@using uBlogsy.Common.Extensions;
+@using umbraco.MacroEngines;
+
+@{
+    DynamicNode d = new DynamicNode(Model.Id);
+    string desc = string.Empty;
+    string keywords = string.Empty;
+
+    // get seo description, use body when no description
+    desc = d.uBlogsyGetValueFirstOf(new string[] { "uBlogsySeoDescription", "uBlogsyContentBody" });
+
+    // get seo keywords, use title when no keywords
+    keywords = d.uBlogsyGetValueFirstOf(new string[] { "uBlogsySeoKeywords", "uBlogsyContentTitle" });
+
+    keywords = Regex.Replace(keywords, "[^A-Za-z0-9,]", " ").Replace("  ", " ");
+    
+    <meta name="keywords" content="@keywords" />
+    <meta name="description" content="@desc.StripHtml().GetSummary(150).Trim()" />
+    <link rel="canonical" href="@Request.Url.AbsoluteUri"/> 
+}

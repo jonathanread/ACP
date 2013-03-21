@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/uBlogsyBaseSite.master" AutoEventWireup="true" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Head" runat="server">
+
+</asp:Content>
+<asp:Content ContentPlaceHolderID="LeftCol" runat="server">
+    <div class="uBlogsy_content_body">
+        <umbraco:Item runat="server" Field="uBlogsyContentBody" />
+    </div>
+
+    <div class="uBlogsy_posts_container">
+        <umbraco:Macro ID="Macro2" Alias="uBlogsyListPosts" ItemCount="5"
+            Small="0" runat="server" PagePramForCache="[@page]" />
+    </div>
+</asp:Content>

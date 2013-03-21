@@ -1,0 +1,17 @@
+@using System.Linq;
+@using System.Xml.Linq;
+@using uBlogsy.BusinessLogic;
+@using umbraco.MacroEngines;
+<div class="uBlogsy_rss_link_container uBlogsy_bottom_border">
+    <h2>
+        @{
+            // get landing page
+            var landing = uBlogsy.BusinessLogic.DataService.Instance.GetLanding(Model.Id);
+            var rss = ((DynamicNode)landing).GetChildrenAsList.Items.Where(x => x.NodeTypeAlias == "uBlogsyRSS").Single();
+            <a href="@rss.Url" class="uBlogsy_feed" title="RSS"><span>@Dictionary["uBlogsyDicRssSubscribe"]</span></a>    
+        }
+    </h2>
+ </div>
+
+
+
