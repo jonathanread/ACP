@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+ 
+  <info>
+    <package>
+      <name>Export Media</name>
+      <version>1.0.3</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/projects/developer-tools/export-media</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Matt Brailsford</name>
+      <website>http://blog.mattbrailsford.com</website>
+    </author>
+    <readme><![CDATA[Exports the contents of a media folder as a Zip file]]></readme>
+  </info>
+  
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+  <files><file><guid>e8393bef-7769-4c8b-a3f0-f763fdefbe57.dll</guid><orgPath>/bin</orgPath><orgName>Ionic.Zip.Reduced.dll</orgName></file><file><guid>094401fe-dff4-4360-9aa0-d03240e78e61.dll</guid><orgPath>/bin</orgPath><orgName>TheOutfield.UmbExt.ExportMedia.dll</orgName></file><file><guid>1f09ba3c-0653-4f6f-a619-64da35e3a140.ashx</guid><orgPath>/umbraco/TheOutfield/ExportMedia/Handlers</orgPath><orgName>ExportMedia.ashx</orgName></file><file><guid>467914c2-1c5b-4879-83d9-68a7e4455f3c.js</guid><orgPath>/umbraco/TheOutfield/ExportMedia/Scripts</orgPath><orgName>exportMedia.js</orgName></file></files>
+  
+</umbPackage>
