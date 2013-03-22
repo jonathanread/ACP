@@ -64,3 +64,4 @@
 2013-03-22 10:34:39,787 [5] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 2ms)
 2013-03-22 10:34:39,790 [5] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of umbraco.interfaces.IAction, found 36 (took 0ms)
 2013-03-22 10:34:45,128 [5] INFO  Umbraco.Core.PluginManager - [Thread 22] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 10ms)
+2013-03-22 12:14:19,229 [5] INFO  Umbraco.Web.UmbracoApplication - [Thread 56] Application shutdown. Reason: HostingEnvironment
