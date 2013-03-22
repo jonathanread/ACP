@@ -204,22 +204,21 @@ a img, img {border:none; }
 .wrapper .bodyContent.home { background-color:white; top:-150px; z-index: 1000; padding-top:40px;}
 .wrapper .bodyContent p { padding:0; margin:0;}
 
-.wrapper .footer { width:925px; min-height:212px; margin: 0 auto; padding:20px; border-top:solid 1px silver; background: /*url(/media/335/footerimg1.jpg)*/ url(/media/330/footerimg.jpg) no-repeat center center;}
-.wrapper .footer footer { position:relative; min-height:212px;}
+.wrapper .footer { width:925px; min-height:232px; margin: 0 auto; padding:20px; border-top:solid 1px silver; background: /*url(/media/335/footerimg1.jpg)*/ url(/media/330/footerimg.jpg) no-repeat center center;}
+.wrapper .footer footer { position:relative; min-height:232px;}
 .wrapper .footer footer .contactFooter {text-align:right; }
 
 .wrapper .footer footer nav .footerNav {position: absolute; top: 0px; left: 0px;}
 .wrapper .footer footer nav .footerNav .sitemap {margin:0; padding:0; font-size:18px; }
 .wrapper .footer footer nav .footerNav .sitemap li {display:inline-block; vertical-align:top; text-align:left; padding:7px 0 0 0; }
-.wrapper .footer footer nav .footerNav .sitemap li:nth-child(2) {width:180px; }
 .wrapper .footer footer nav .footerNav .sitemap > li > a {border-bottom:solid 1px silver;}
-.wrapper .footer footer nav .footerNav .sitemap > li {border-right:solid 1px silver; padding:0 5px 0 0;}
+.wrapper .footer footer nav .footerNav .sitemap > li {border-right:solid 1px silver; padding:0 10px 0 0;}
 .wrapper .footer footer nav .footerNav .sitemap .sitemapSublevel { margin:0; padding:0; }
-.wrapper .footer footer nav .footerNav .sitemap .sitemapSublevel li {display:block; width:100%; font-size:16px; }
+.wrapper .footer footer nav .footerNav .sitemap .sitemapSublevel li {display:block; width:100%; font-size:16px; padding:7px 0 0 10px; }
 .wrapper .footer footer nav .footerNav .sitemap li a, .wrapper .footer footer nav .footerNav .sitemap .sitemapSublevel li a {display:block; width:100%; color:#808080; text-decoration:none;}
 .wrapper .footer footer nav .footerNav .sitemap li a:hover, .wrapper .footer footer nav .footerNav .sitemap .sitemapSublevel li a:hover {text-decoration:underline; }
-.wrapper .footer footer #affiliates {position:absolute; bottom:0px;right:0px;}
-.wrapper .footer footer address {text-align:right; }
+.wrapper .footer footer #affiliates {position:absolute; bottom:0px;right:0px; }
+.wrapper .footer footer address {text-align:right; margin:0 0 15px 0; }
 
 /*banners*/
 .wrapper .rotator { position:relative; min-height:560px;}
