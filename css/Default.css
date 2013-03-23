@@ -211,6 +211,7 @@ a img, img {border:none; }
 .wrapper .footer footer nav .footerNav {position: absolute; top: 0px; left: 0px;}
 .wrapper .footer footer nav .footerNav .sitemap {margin:0; padding:0; font-size:18px; }
 .wrapper .footer footer nav .footerNav .sitemap li {display:inline-block; vertical-align:top; text-align:left; padding:7px 0 0 0; }
+
 .wrapper .footer footer nav .footerNav .sitemap > li > a {border-bottom:solid 1px silver;}
 .wrapper .footer footer nav .footerNav .sitemap > li {border-right:solid 1px silver; padding:0 10px 0 0;}
 .wrapper .footer footer nav .footerNav .sitemap .sitemapSublevel { margin:0; padding:0; }
