@@ -40,7 +40,7 @@
 			<div class="header">
 				<header>
 					<a id="logo" href="/">
-						<img src="/media/303/logo.png" />
+						<img src="/css/Images/logo.png" />
 					</a>
 					<div id="tagLine">
 						We Are As Close As Your Phone ...<div>Providing Quality Service For Over 25 Years</div>
@@ -48,7 +48,7 @@
 
 					<div id="contactHeader">
 						260.483.7661<br />
-						<a href="/contact/request-for-service"></a>
+						<a id="rfs" href="/contact/request-for-service"></a>
 					</div>
 					<nav>
 						<umbraco:Macro ID="Macro2" Alias="MainNavigation" runat="server" />
@@ -108,13 +108,11 @@
 					</nav>
 					<div class="contactFooter">
 						<a href="http://youtube.com">
-							<img src="/media/596/youtube.jpg" alt="YouTube" /></a>
+							<img src="/css/Images/youtube.jpg" alt="YouTube" /></a>
 						<a href="http://facebook.com">
-							<img src="/media/325/fb.png" alt="Facebook" /></a>
-						<a href="http://twitter.com">
-							<img src="/media/320/twitter.png" alt="Twitter" /></a>
+							<img src="/css/Images/fb.png" alt="Facebook" /></a>
 						<a href="http://linkedin.com">
-							<img src="/media/453/linkedin.jpg" alt="LinkedIn" /></a>
+							<img src="/css/Images/linkedin.jpg" alt="LinkedIn" /></a>
 					</div>
 					<address>
 						American City Plumbing, Inc.<br />
@@ -126,7 +124,7 @@
                    
 					</address>
 					<div id="affiliates">
-						<img src="/media/444/affiliates.png" alt="PHCC, BBB, New Haven Chamber of Commerce" />
+						<img src="/css/Images/affiliates.png" alt="PHCC, BBB, New Haven Chamber of Commerce" />
 					</div>
 				</footer>
 			</div>
