@@ -255,12 +255,13 @@ a img, img {border:none; }
 #ContactForm div .radio label:after { content:" ";}
 #contact,#right  {vertical-align:top; display:inline-block;}
 #contact #right,#right { display:inline-block; margin: 0 0 0 90px; width:46%;}
+.request#contact #right { width:auto;}
 #right h2 { margin:0 0 10px 0;}
-#right img { float:right; height:50%;width:50%;}
+#right img#building { float:right; height:50%;width:50%;}
 #ContactForm fieldset {border-radius:0 30px 0 30px;}
 #ContactForm fieldset legend{  font-family:KomikaTitleRegular, Verdana, Geneva, 'DejaVu Sans', sans-serif; font-size:22px;}
-#ContactForm button {float:right; background-image:url(/media/3209/submitbtn.jpg); border:none; color:#fff;  height:50px; width:200px; font-family:KomikaTitleRegular, Verdana, Geneva, 'DejaVu Sans', sans-serif; font-size:24px;}
-#ContactForm button:hover { background-image:url(/media/3214/submitbtndwn.jpg);cursor:pointer;}
+#ContactForm button {float:right; background-image:url(Images/submitbtn.jpg); border:none; color:#fff;  height:50px; width:200px; font-family:KomikaTitleRegular, Verdana, Geneva, 'DejaVu Sans', sans-serif; font-size:24px;}
+#ContactForm button:hover { background-image:url(Images/submitbtndwn.jpg);cursor:pointer;}
 #contact iframe { float:right; margin:20px 0 0 0;}
 #contact address { margin:40px 0 0 0;}
 
