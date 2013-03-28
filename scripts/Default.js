@@ -1,12 +1,13 @@
 
 $(document).ready(function(){
-    $(".wrapper .header .menu li")
+    $(".menu li")
         .mouseover(function () {
             $(this).children(".subMenu").show();
         })
         .mouseout(function () {
             $(this).children(".subMenu").hide();
         });
+
     if($(".wrapper .rotator").length){
     	$(".wrapper .rotator").cycle({
 			fx:"turnUp",
@@ -34,6 +35,28 @@ $(document).ready(function(){
     	$(".menu").wrap("<div class='mobile' />");
     	$(".mobile").click(function () { $(this).children(".menu").toggle(); });
     }
+
+	
+});
+
+$(window).scroll(function () {
+	var t = $(this).scrollTop();
+
+	if (t > 150) {
+		var nav = $("header nav").html();
+		if (!$(".fixedNav").length) {
+			$("header nav").after("<div class='fixedNav' />")
+			$(".fixedNav").html(nav);
+		} else {
+			$(".fixedNav").show()
+		}
+	}
+	else
+	{
+		if ($(".fixedNav").length) {
+			$(".fixedNav").hide();
+		}
+	}
 });
 
 window.mobilecheck = function () {
